@@ -1,0 +1,46 @@
+/* CSS Variables */
+:root {
+  /* Colors */
+  --color-primary: #b54425;
+  --color-primary-hover: #f06e4b;
+  --color-secondary: #f2e2ce;
+  --color-dark-blue-1: #051525;
+  --color-dark-blue-2: #081b2c;
+  --color-dark-blue-3: #102a43;
+  --color-background: #0a1929;
+  --color-text: #e0e0e0;
+  --color-text-light: rgba(255, 255, 255, 0.8);
+  --color-text-lighter: rgba(255, 255, 255, 0.7);
+  --color-text-lightest: rgba(255, 255, 255, 0.6);
+  --color-border: rgba(255, 255, 255, 0.05);
+  --color-panel-bg: rgba(16, 42, 67, 0.5);
+  --color-panel-bg-darker: rgba(8, 27, 44, 0.6);
+  --color-panel-bg-darkest: rgba(5, 21, 37, 0.6);
+  --color-modal-bg: rgba(5, 21, 37, 0.99);
+
+  /* Gradients */
+  --gradient-fire: linear-gradient(135deg, #b54425 0%, #ff7f50 100%);
+  --gradient-blue: linear-gradient(135deg, #0a2342 0%, #1a4d8c 100%);
+  --gradient-yellow: linear-gradient(135deg, #ffc300 0%, #ffd700 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.2);
+  --shadow-btn: 0 4px 12px rgba(224, 94, 59, 0.3);
+  --shadow-btn-hover: 0 6px 16px rgba(224, 94, 59, 0.4);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-circle: 50%;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-xxl: 80px;
+}
