@@ -1,0 +1,147 @@
+/* File path: patterns/animated-words/js-version/animated-words.css */
+
+/* ============================================
+    Animated Words CSS
+    To implment this animation you need to include the following CSS file in HTML along with the associated JS file.
+    You will need to include the followwing classes in your HTML:
+    - hero-visual
+    - animated-words-container
+    - animated-word
+    - word-description
+    - visual-accent
+    - accent-line
+    - floating-dots
+    - dot
+   ============================================ */
+
+.hero-visual {
+  position: relative;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Animated Words */
+.animated-words-container {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.animated-word {
+  position: absolute;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  opacity: 0;
+  transform: translateY(50px) rotateX(90deg);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-light),
+    var(--secondary)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease-in-out infinite;
+  text-shadow: 0 10px 30px rgba(224, 86, 0, 0.3);
+}
+
+.animated-word.active {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+.animated-word.exit {
+  opacity: 0;
+  transform: translateY(-50px) rotateX(-90deg);
+}
+
+.word-description {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.125rem;
+  color: var(--text-medium);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.word-description.active {
+  opacity: 1;
+}
+
+/* Decorative elements */
+.visual-accent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.accent-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  height: 2px;
+  width: 80%;
+  left: 10%;
+  opacity: 0.3;
+  animation: lineGlow 4s ease-in-out infinite;
+}
+
+.accent-line.top {
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.accent-line.bottom {
+  bottom: 10%;
+  animation-delay: 2s;
+}
+
+.floating-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: floatDot 6s ease-in-out infinite;
+}
+
+.dot:nth-child(1) {
+  top: 25%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  top: 70%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+.dot:nth-child(3) {
+  top: 40%;
+  right: 10%;
+  animation-delay: 4s;
+}

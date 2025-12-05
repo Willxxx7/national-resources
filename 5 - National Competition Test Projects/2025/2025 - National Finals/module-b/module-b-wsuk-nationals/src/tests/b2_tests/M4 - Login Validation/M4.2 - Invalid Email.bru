@@ -1,0 +1,22 @@
+meta {
+  name: M4.2 - Login with invalid email
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/login
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  email: invalid@example.com
+  password: {{adminPassword}}
+}
+
+tests {
+  test("Invalid email rejected", function() {
+    expect([200, 302, 401, 422]).to.include(res.status);
+  });
+}

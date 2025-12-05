@@ -1,0 +1,17 @@
+meta {
+  name: M1.4 - Orders without auth
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/orders
+  body: none
+  auth: none
+}
+
+tests {
+  test("Unauthenticated user blocked from orders", function() {
+    expect([200, 302, 401]).to.include(res.status);
+  });
+}

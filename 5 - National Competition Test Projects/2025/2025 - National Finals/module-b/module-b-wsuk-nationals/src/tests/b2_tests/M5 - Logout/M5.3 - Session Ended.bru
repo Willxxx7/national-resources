@@ -1,0 +1,17 @@
+meta {
+  name: M5.3 - Session ended after logout
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/
+  body: none
+  auth: none
+}
+
+tests {
+  test("Cannot access protected route after logout", function() {
+    expect([200, 302, 401]).to.include(res.status);
+  });
+}

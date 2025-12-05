@@ -1,0 +1,40 @@
+/* ============================================
+   SPARK STUDIOS CSS
+   ============================================ */
+
+:root {
+  /* Brand Colors */
+  --primary: #e05600;
+  --primary-light: #d55738;
+  --primary-dark: #b14400;
+  --secondary: #f2e2ce;
+  --dark-1: #0a0f1c;
+  --dark-2: #141a2e;
+  --dark-3: #1e2749;
+  --white: #ffffff;
+  --text-light: #e8eaed;
+  --text-medium: #c4c7cd;
+  --text-subtle: #9aa0a6;
+  --border: rgba(255, 255, 255, 0.2);
+  --overlay: rgba(10, 15, 28, 0.85);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  /* Reusable values */
+  --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 8px 32px rgba(181, 68, 37, 0.3);
+  --shadow-lg: 0 20px 40px rgba(181, 68, 37, 0.4);
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-light)
+  );
+  --radius: 3px;
+  --radius-lg: 5px;
+}

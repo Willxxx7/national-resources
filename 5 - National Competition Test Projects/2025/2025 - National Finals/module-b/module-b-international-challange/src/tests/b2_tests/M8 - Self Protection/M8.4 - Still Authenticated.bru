@@ -1,0 +1,17 @@
+meta {
+  name: M8.4 - Still authenticated after attempts
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/
+  body: none
+  auth: none
+}
+
+tests {
+  test("Admin still has access to dashboard", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

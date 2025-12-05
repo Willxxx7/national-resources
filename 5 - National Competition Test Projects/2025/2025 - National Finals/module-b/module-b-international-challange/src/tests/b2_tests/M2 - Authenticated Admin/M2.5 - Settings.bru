@@ -1,0 +1,17 @@
+meta {
+  name: M2.5 - Access settings
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/settings
+  body: none
+  auth: none
+}
+
+tests {
+  test("Authenticated admin can access settings", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

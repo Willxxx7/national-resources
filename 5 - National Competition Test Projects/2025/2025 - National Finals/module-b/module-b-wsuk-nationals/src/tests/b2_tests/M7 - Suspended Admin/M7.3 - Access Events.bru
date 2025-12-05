@@ -1,0 +1,17 @@
+meta {
+  name: M7.3 - Access events after failed login
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/events
+  body: none
+  auth: none
+}
+
+tests {
+  test("Suspended admin cannot access events", function() {
+    expect([200, 302, 401, 403]).to.include(res.status);
+  });
+}

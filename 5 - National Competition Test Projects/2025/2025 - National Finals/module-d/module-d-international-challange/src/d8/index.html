@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D8 - Shopping Cart</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Shopping Cart</h1>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="products-section">
+          <h2>Available Products</h2>
+          <div class="products-grid">
+            <!-- Products hardcoded in HTML -->
+            <div class="product-card">
+              <div class="product-icon">🎧</div>
+              <div class="product-info">
+                <div class="product-name">Wireless Headphones</div>
+                <div class="product-price">£79.99</div>
+              </div>
+              <button
+                class="add-btn"
+                onclick="addToCart('Wireless Headphones', 79.99, '🎧')"
+              >
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card">
+              <div class="product-icon">📱</div>
+              <div class="product-info">
+                <div class="product-name">Smartphone Case</div>
+                <div class="product-price">£19.99</div>
+              </div>
+              <button
+                class="add-btn"
+                onclick="addToCart('Smartphone Case', 19.99, '📱')"
+              >
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card">
+              <div class="product-icon">🎒</div>
+              <div class="product-info">
+                <div class="product-name">Laptop Backpack</div>
+                <div class="product-price">£45.00</div>
+              </div>
+              <button
+                class="add-btn"
+                onclick="addToCart('Laptop Backpack', 45.00, '🎒')"
+              >
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card">
+              <div class="product-icon">🔌</div>
+              <div class="product-info">
+                <div class="product-name">USB-C Hub</div>
+                <div class="product-price">£34.99</div>
+              </div>
+              <button
+                class="add-btn"
+                onclick="addToCart('USB-C Hub', 34.99, '🔌')"
+              >
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card">
+              <div class="product-icon">🖱️</div>
+              <div class="product-info">
+                <div class="product-name">Wireless Mouse</div>
+                <div class="product-price">£25.50</div>
+              </div>
+              <button
+                class="add-btn"
+                onclick="addToCart('Wireless Mouse', 25.50, '🖱️')"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-section">
+          <h2>
+            Your Cart
+            <span class="cart-badge" id="cartBadge">0</span>
+          </h2>
+          <div id="cartItems" class="cart-items">
+            <p class="empty-cart" id="emptyMessage">Your cart is empty</p>
+          </div>
+
+          <div class="cart-summary" id="cartSummary" style="display: none">
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span id="subtotal">£0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Tax (20%):</span>
+              <span id="tax">£0.00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total:</span>
+              <span id="total">£0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Do not modify any code after this line-->
+    <footer id="dynamicFooter"></footer>
+    <script src="js/solution.js"></script>
+    <script>
+      document.getElementById('dynamicFooter').innerHTML =
+        '&copy; ' +
+        new Date().getFullYear() +
+        ' WorldSkills | All rights reserved.';
+    </script>
+  </body>
+</html>

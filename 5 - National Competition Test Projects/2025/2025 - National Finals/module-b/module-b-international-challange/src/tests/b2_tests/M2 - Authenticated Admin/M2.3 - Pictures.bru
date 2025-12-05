@@ -1,0 +1,17 @@
+meta {
+  name: M2.3 - Access pictures
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/pictures
+  body: none
+  auth: none
+}
+
+tests {
+  test("Authenticated admin can access pictures", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

@@ -1,0 +1,153 @@
+### Hero
+
+Creative Excellence Made in Wales
+
+Professional photography and cutting-edge digital design services that bring your vision to life with Welsh passion and precision. 
+
+
+PHOTOGRAPHY
+CUSTOM PRINTING
+WEB DEVELOPMENT
+BRANDING
+UX/UI DESIGN
+DIGITAL MARKETING
+
+
+### ABOUT US 
+
+What We Create
+From stunning photography to innovative digital solutions, we deliver creative excellence across all mediums. 
+
+Professional Photography
+
+Capturing moments that matter with artistic vision and technical expertise. From corporate headshots to product photography, we create images that tell your story.
+
+Commercial Photography
+Portrait Sessions
+Event Coverage
+Product Photography
+
+
+Digital Design & Development
+
+Building digital experiences that engage and convert. Our design-first approach ensures every pixel serves a purpose in achieving your business goals.
+
+Web Design
+Brand Identity
+UI/UX Design
+Print Design
+
+### PORTFOLIO 
+
+
+Recent Work
+
+A glimpse into our latest projects and creative solutions
+
+Filters: All | Photography | Design | Wedding | Cars | Portraits
+
+### WHY CHOOSE US
+
+
+Why Spark Studios?
+
+We combine Welsh creativity with international standards to deliver exceptional results that exceed expectations.
+
+Creative Excellence
+Award-winning creativity backed by technical expertise and attention to detail.
+
+On-Time Delivery
+We understand deadlines matter. Every project delivered on schedule, every time.
+
+Passionate Service
+We pour our Welsh passion into every project, creating lasting partnerships with our clients.
+
+### Get in Touch
+
+
+Ready to Ignite Your Project?
+
+Transform your vision into reality with our expert team of creatives and technologists
+
+
+###Clients
+
+Our Clients
+
+Trusted by leading brands across Wales and beyond
+
+
+### Map section
+
+(LEFT)
+Spark Studios
+
+Find Your Spark
+Spark Studios Team
+
+Welsh creativity meets global standards. We craft digital experiences that inspire and engage. Based in the heart of Wales, we combine traditional craftsmanship values with cutting-edge technology to deliver exceptional results. Our team of passionate creatives and technical experts work collaboratively to bring your vision to life, ensuring every project exceeds expectations and builds lasting value for your brand.
+
+Whether you need stunning photography, innovative web design, or comprehensive digital marketing solutions, Spark Studios is your partner for success. Let's create something extraordinary together. Contact us today to discuss your project and discover how we can help you achieve your goals with creativity, precision, and a touch of Welsh magic.
+
+---
+(RIGHT)
+Spark Studios
+Near Cardiff University, Cardiff CF10 3AT
+Located in the vibrant capital of Wales, we're positioned near Cardiff University at the heart of the city's creative and academic district. 
+
+
+### SOCIAL MEDIA
+
+Connect With Us
+
+### Modals
+
+<!-- Privacy Policy Modal -->
+
+        <h4>Information We Collect</h4>
+        <p>We collect information you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact us for support.</p>
+        
+        <h4>How We Use Your Information</h4>
+        <p>We use the information we collect to provide, maintain, and improve our services, process transactions, and communicate with you.</p>
+        
+        <h4>Information Sharing</h4>
+        <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.</p>
+        
+        <h4>Data Security</h4>
+        <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+        
+        <h4>Contact Us</h4>
+        <p>If you have questions about this Privacy Policy, please contact us at privacy@sparkstudios.com</p>
+
+<!-- Terms of Service Modal -->
+
+        <h4>Acceptance of Terms</h4>
+        <p>By accessing and using our services, you accept and agree to be bound by the terms and provision of this agreement.</p>
+        
+        <h4>Service Description</h4>
+        <p>Spark Studios provides professional photography and digital design services. We reserve the right to modify or discontinue services at any time.</p>
+        
+        <h4>User Responsibilities</h4>
+        <p>You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
+        
+        <h4>Intellectual Property</h4>
+        <p>All content, trademarks, and other intellectual property on our website are owned by Spark Studios or our licensors.</p>
+        
+        <h4>Limitation of Liability</h4>
+        <p>Spark Studios shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use of our services.</p>
+
+<!-- Cookie Policy Modal -->
+
+        <h4>What Are Cookies</h4>
+        <p>Cookies are small text files that are stored on your device when you visit our website. They help us provide you with a better experience.</p>
+        
+        <h4>Types of Cookies We Use</h4>
+        <p><strong>Essential Cookies:</strong> Necessary for the website to function properly.</p>
+        <p><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website.</p>
+        <p><strong>Preference Cookies:</strong> Remember your preferences and settings.</p>
+        
+        <h4>Managing Cookies</h4>
+        <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your device and set most browsers to prevent them from being placed.</p>
+        
+        <h4>Third-Party Cookies</h4>
+        <p>We may use third-party services that place cookies on your device to help us analyze website usage and improve our services.</p>

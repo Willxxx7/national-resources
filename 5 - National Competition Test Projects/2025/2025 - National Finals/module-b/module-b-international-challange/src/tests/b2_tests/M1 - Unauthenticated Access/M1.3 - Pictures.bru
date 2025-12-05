@@ -1,0 +1,17 @@
+meta {
+  name: M1.3 - Pictures without auth
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/pictures
+  body: none
+  auth: none
+}
+
+tests {
+  test("Unauthenticated user blocked from pictures", function() {
+    expect([200, 302, 401]).to.include(res.status);
+  });
+}

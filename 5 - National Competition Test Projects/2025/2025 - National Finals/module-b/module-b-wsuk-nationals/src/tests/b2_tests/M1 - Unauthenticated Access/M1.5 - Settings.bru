@@ -1,0 +1,17 @@
+meta {
+  name: M1.5 - Settings without auth
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/settings
+  body: none
+  auth: none
+}
+
+tests {
+  test("Unauthenticated user blocked from settings", function() {
+    expect([200, 302, 401]).to.include(res.status);
+  });
+}

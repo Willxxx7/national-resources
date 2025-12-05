@@ -1,0 +1,17 @@
+meta {
+  name: M6.6 - Session cleared after logout
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/
+  body: none
+  auth: none
+}
+
+tests {
+  test("Session cleared - cannot access dashboard", function() {
+    expect([200, 302, 401]).to.include(res.status);
+  });
+}

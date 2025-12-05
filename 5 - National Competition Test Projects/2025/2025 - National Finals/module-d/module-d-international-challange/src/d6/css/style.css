@@ -1,0 +1,98 @@
+/*CSS*/
+body,
+h1,
+header,
+main,
+footer,
+div {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+header {
+  background-color: #1a1a1a;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  color: white;
+}
+
+main {
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  background-color: #0a0a0a;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+  text-align: center;
+  color: white;
+}
+
+#copyrightYear {
+  font-weight: bold;
+}
+
+/*DO NOT MODIFY ANY CODE ABOVE*/
+/*PUT YOUR CSS CODE FROM THIS POINT ONWARD*/
+
+.neon-button {
+  width: 200px;
+  height: 60px;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: 2px solid #00ff88;
+  cursor: pointer;
+  animation: glow-pulse 1.5s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background-color: #00ff8844;
+  border: 3px solid #00ff88;
+  box-shadow:
+    0 0 30px #00ff88,
+    0 0 60px #00ff88,
+    inset 0 0 30px #00ff88;
+  text-shadow:
+    0 0 30px #00ff88,
+    0 0 60px #00ff88;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 5px #00ff88,
+      0 0 10px #00ff88,
+      0 0 20px #00ff88;
+    text-shadow:
+      0 0 5px #00ff88,
+      0 0 10px #00ff88;
+  }
+
+  50% {
+    box-shadow:
+      0 0 10px #00ff88,
+      0 0 20px #00ff88,
+      0 0 30px #00ff88;
+    text-shadow:
+      0 0 10px #00ff88,
+      0 0 20px #00ff88;
+  }
+}

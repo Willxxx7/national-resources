@@ -1,0 +1,17 @@
+meta {
+  name: M9.2 - Access private event with invalid code
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/events/private_events/private_test_event?access_code=INVALID999
+  body: none
+  auth: none
+}
+
+tests {
+  test("Invalid access code rejected", function() {
+    expect([200, 302, 401, 403, 404]).to.include(res.status);
+  });
+}

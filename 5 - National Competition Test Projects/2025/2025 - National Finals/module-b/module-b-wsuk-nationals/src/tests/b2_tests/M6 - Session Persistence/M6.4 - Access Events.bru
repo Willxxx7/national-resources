@@ -1,0 +1,17 @@
+meta {
+  name: M6.4 - Access events
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/events
+  body: none
+  auth: none
+}
+
+tests {
+  test("Session persists - can access events", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

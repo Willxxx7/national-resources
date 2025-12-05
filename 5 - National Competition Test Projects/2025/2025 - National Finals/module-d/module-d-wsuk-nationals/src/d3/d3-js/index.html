@@ -1,0 +1,79 @@
+<!--PATH: d3/d3-js/index.html - DO NOT MODIFY-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D3 - Contact Logger (Node.js)</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Contact Logger - Node.js</h1>
+    </header>
+
+    <main>
+      <div class="contact-container">
+        <h2>Contact Form</h2>
+
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Enter your message (min 10 characters)"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit">Send Message</button>
+            <button type="button" id="clearBtn">Clear</button>
+          </div>
+        </form>
+
+        <div class="result-container">
+          <h3>Result:</h3>
+          <pre id="result">Submit the form to test the API</pre>
+        </div>
+
+        <div class="validation-info">
+          <h3>Validation Rules:</h3>
+          <ul>
+            <li>Name: minimum 2 characters</li>
+            <li>Email: valid email format</li>
+            <li>Message: minimum 10 characters</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <!--Do not modify any code after this line-->
+    <footer id="dynamicFooter"></footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

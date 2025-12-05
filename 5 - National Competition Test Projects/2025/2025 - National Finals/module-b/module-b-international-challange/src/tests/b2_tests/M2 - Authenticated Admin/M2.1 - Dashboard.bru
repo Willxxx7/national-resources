@@ -1,0 +1,17 @@
+meta {
+  name: M2.1 - Access dashboard
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/
+  body: none
+  auth: none
+}
+
+tests {
+  test("Authenticated admin can access dashboard", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

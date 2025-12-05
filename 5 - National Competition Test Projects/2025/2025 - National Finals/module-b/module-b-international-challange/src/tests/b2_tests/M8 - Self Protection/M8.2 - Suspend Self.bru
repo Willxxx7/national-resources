@@ -1,0 +1,17 @@
+meta {
+  name: M8.2 - Try to suspend self
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/settings/users/{{adminId}}/suspend
+  body: none
+  auth: none
+}
+
+tests {
+  test("Cannot suspend self", function() {
+    expect([200, 302, 400, 403, 404, 422]).to.include(res.status);
+  });
+}

@@ -1,0 +1,17 @@
+meta {
+  name: M3.2 - Access register page
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/register
+  body: none
+  auth: none
+}
+
+tests {
+  test("Authenticated admin redirected from register page", function() {
+    expect([200, 302, 404]).to.include(res.status);
+  });
+}

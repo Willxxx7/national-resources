@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D7 - JS Functions Validator</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Load tests, then competitor functions, then the harness -->
+    <script src="js/validator.js" defer></script>
+    <script src="js/functions.js" defer></script>
+    <script src="js/harness.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>D7 - JS Functions Validator</h1>
+    </header>
+    <!--Do not modify any code after this line-->
+    <main>
+      <!-- Validation Test Panel -->
+      <section id="test-results" aria-live="polite" aria-busy="true">
+        <header class="test-header">
+          <h2>Tests Validator</h2>
+        </header>
+
+        <div id="summary" role="status">Running tests…</div>
+        <ul id="resultsList" aria-label="Function test results"></ul>
+      </section>
+    </main>
+
+    <!--Do not modify any code after this line-->
+    <footer id="dynamicFooter"></footer>
+    <script>
+      document.getElementById('dynamicFooter').innerHTML =
+        '&copy; ' +
+        new Date().getFullYear() +
+        ' WorldSkills | All rights reserved.';
+    </script>
+  </body>
+</html>

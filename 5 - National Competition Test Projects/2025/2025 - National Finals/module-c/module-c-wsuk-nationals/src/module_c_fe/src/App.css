@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+@theme {
+  /* ============================================
+   SPARK STUDIOS CSS
+   ============================================ */
+  /* Brand Colors */
+  --color-primary: #e05600;
+  --color-primary-light: #d55738;
+  --color-primary-dark: #b14400;
+  --color-secondary: #f2e2ce;
+  --color-dark-1: #0a0f1c;
+  --color-dark-2: #141a2e;
+  --color-dark-3: #1e2749;
+  --color-white: #ffffff;
+  --color-light: #e8eaed;
+  --color-medium: #fff;
+  --color-subtle: #9aa0a6;
+  --border: rgba(255, 255, 255, 0.12);
+  --overlay: rgba(10, 15, 28, 0.85);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  /* Other */
+  --radius: 6px;
+  --radius-lg: 12px;
+  --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /*--shadow: 0 8px 32px rgba(181, 68, 37, 0.3);*/
+  /*--shadow-lg: 0 20px 40px rgba(181, 68, 37, 0.4);*/
+}
+
+@layer theme {
+  input {
+    @apply rounded-sm! p-2! shadow-sm! border-zinc-300! transition-shadow duration-300;
+  }
+
+  input:focus {
+    @apply shadow-md! transition-shadow duration-300;
+  }
+
+  select {
+    @apply rounded-sm! p-2! shadow-sm! border-zinc-300!;
+  }
+
+  select:focus {
+    @apply shadow-md! transition-shadow duration-300;
+  }
+}

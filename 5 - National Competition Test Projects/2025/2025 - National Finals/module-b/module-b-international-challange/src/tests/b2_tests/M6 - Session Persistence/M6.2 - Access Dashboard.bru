@@ -1,0 +1,17 @@
+meta {
+  name: M6.2 - Access dashboard (first time)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/
+  body: none
+  auth: none
+}
+
+tests {
+  test("Session active - can access dashboard", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

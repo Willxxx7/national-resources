@@ -1,0 +1,17 @@
+meta {
+  name: M4.4 - Session started after login
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/
+  body: none
+  auth: none
+}
+
+tests {
+  test("Can access protected route after login", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

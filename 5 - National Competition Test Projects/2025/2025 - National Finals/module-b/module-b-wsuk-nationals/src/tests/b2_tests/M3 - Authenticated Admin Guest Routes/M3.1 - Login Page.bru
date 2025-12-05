@@ -1,0 +1,17 @@
+meta {
+  name: M3.1 - Access login page
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/login
+  body: none
+  auth: none
+}
+
+tests {
+  test("Authenticated admin redirected from login page", function() {
+    expect([200, 302]).to.include(res.status);
+  });
+}

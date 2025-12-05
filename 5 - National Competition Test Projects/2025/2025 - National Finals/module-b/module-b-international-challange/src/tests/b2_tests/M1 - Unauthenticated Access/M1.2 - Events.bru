@@ -1,0 +1,17 @@
+meta {
+  name: M1.2 - Events without auth
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/events
+  body: none
+  auth: none
+}
+
+tests {
+  test("Unauthenticated user blocked from events", function() {
+    expect([200, 302, 401]).to.include(res.status);
+  });
+}

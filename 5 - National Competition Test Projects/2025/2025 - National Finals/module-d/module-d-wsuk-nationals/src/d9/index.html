@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D9 - Phone Number Formatter</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>D9 - UK Phone Number Formatter</h1>
+    </header>
+
+    <main>
+      <!--Put your code here-->
+      <div class="formatter-container">
+        <h2>UK Phone Formatter</h2>
+        <p class="subtitle">
+          Enter a UK phone number and select an output format.
+        </p>
+
+        <div class="form-group">
+          <label for="phoneInput">Phone Number:</label>
+          <input type="text" id="phoneInput" placeholder="07421231234" />
+        </div>
+
+        <div class="form-group">
+          <label for="formatSelect">Format:</label>
+          <select id="formatSelect">
+            <option value="standard">Standard (+44 XXXX XXXXXX)</option>
+            <option value="international">
+              International (00 44 XXXX XXXXXX)
+            </option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button id="formatBtn" class="btn btn-primary">Format</button>
+          <button id="clearBtn" class="btn btn-secondary">Clear</button>
+        </div>
+
+        <div
+          class="result-container"
+          id="resultContainer"
+          style="display: none"
+        >
+          <h3>Formatted Result:</h3>
+          <p class="formatted-number" id="formattedNumber"></p>
+          <p class="original-number">
+            Original:
+            <span id="originalNumber"></span>
+          </p>
+        </div>
+
+        <div class="error-container" id="errorContainer" style="display: none">
+          <p class="error-message" id="errorMessage"></p>
+        </div>
+      </div>
+    </main>
+    <!--Do not modify any code after this line-->
+    <footer id="dynamicFooter"></footer>
+    <script src="js/formatter.js"></script>
+    <script>
+      document.getElementById('dynamicFooter').innerHTML =
+        '&copy; ' +
+        new Date().getFullYear() +
+        ' WorldSkills | All rights reserved.';
+    </script>
+  </body>
+</html>

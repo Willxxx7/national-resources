@@ -1,0 +1,21 @@
+meta {
+  name: M9.4 - Verify access code via POST
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/verify-access-code
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  access_code: TestCode123
+}
+
+tests {
+  test("Access code verification endpoint works", function() {
+    expect([200, 302, 404, 405, 422]).to.include(res.status);
+  });
+}

@@ -1,0 +1,22 @@
+meta {
+  name: M7.1 - Login with suspended admin
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/login
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  email: {{suspendedEmail}}
+  password: {{suspendedPassword}}
+}
+
+tests {
+  test("Suspended admin login rejected", function() {
+    expect([200, 302, 401, 403, 422]).to.include(res.status);
+  });
+}

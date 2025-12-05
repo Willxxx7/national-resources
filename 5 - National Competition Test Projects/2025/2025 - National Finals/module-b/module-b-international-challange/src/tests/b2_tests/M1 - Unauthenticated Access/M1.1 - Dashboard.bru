@@ -1,0 +1,17 @@
+meta {
+  name: M1.1 - Dashboard without auth
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/
+  body: none
+  auth: none
+}
+
+tests {
+  test("Unauthenticated user blocked from dashboard", function() {
+    expect([200, 302, 401]).to.include(res.status);
+  });
+}

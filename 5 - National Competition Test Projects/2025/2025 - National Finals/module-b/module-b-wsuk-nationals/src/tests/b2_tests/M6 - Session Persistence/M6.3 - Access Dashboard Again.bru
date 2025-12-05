@@ -1,0 +1,17 @@
+meta {
+  name: M6.3 - Access dashboard (second time)
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/
+  body: none
+  auth: none
+}
+
+tests {
+  test("Session persists - can still access dashboard", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

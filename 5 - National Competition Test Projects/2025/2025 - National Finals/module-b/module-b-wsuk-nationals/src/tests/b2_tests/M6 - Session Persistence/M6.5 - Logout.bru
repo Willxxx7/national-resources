@@ -1,0 +1,17 @@
+meta {
+  name: M6.5 - Logout
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/logout
+  body: none
+  auth: none
+}
+
+tests {
+  test("Logout succeeds", function() {
+    expect([200, 302]).to.include(res.status);
+  });
+}

@@ -1,0 +1,22 @@
+meta {
+  name: M4.1 - Login with valid credentials
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/login
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  email: {{adminEmail}}
+  password: {{adminPassword}}
+}
+
+tests {
+  test("Valid credentials accepted", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

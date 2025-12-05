@@ -1,0 +1,17 @@
+meta {
+  name: M2.4 - Access orders
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/orders
+  body: none
+  auth: none
+}
+
+tests {
+  test("Authenticated admin can access orders", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}

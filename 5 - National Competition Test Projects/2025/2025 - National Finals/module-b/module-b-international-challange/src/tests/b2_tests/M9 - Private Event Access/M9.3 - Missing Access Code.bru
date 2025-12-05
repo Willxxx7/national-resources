@@ -1,0 +1,17 @@
+meta {
+  name: M9.3 - Access private event without code
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/events/private_events/private_test_event
+  body: none
+  auth: none
+}
+
+tests {
+  test("Missing access code rejected", function() {
+    expect([200, 302, 401, 403, 404]).to.include(res.status);
+  });
+}

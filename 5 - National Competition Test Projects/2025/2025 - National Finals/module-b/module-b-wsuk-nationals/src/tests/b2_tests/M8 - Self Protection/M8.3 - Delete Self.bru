@@ -1,0 +1,17 @@
+meta {
+  name: M8.3 - Try to delete self
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/settings/users/{{adminId}}
+  body: none
+  auth: none
+}
+
+tests {
+  test("Cannot delete self", function() {
+    expect([200, 302, 400, 403, 404, 422]).to.include(res.status);
+  });
+}

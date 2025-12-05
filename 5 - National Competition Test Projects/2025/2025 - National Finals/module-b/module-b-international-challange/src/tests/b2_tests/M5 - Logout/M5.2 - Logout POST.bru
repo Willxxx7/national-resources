@@ -1,0 +1,17 @@
+meta {
+  name: M5.2 - Logout using POST
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/logout
+  body: none
+  auth: none
+}
+
+tests {
+  test("Logout succeeds", function() {
+    expect([200, 302]).to.include(res.status);
+  });
+}

@@ -1,0 +1,17 @@
+meta {
+  name: M2.2 - Access events
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/events
+  body: none
+  auth: none
+}
+
+tests {
+  test("Authenticated admin can access events", function() {
+    expect(res.status).to.be.within(200, 299);
+  });
+}
