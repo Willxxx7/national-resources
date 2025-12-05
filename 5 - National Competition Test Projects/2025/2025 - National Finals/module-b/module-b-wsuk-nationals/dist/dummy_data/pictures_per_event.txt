@@ -1,0 +1,159 @@
+# PICTURE COUNT PER EVENT
+# This shows how many pictures belong to each event
+
+EVENT 1: Portsmouth Graduation 2025
+- Picture Count: 4
+- Picture Locators: E1P1, E1P2, E1P3, E1P4
+- Files: event_1_pic_1.jpg through event_1_pic_4.jpg
+
+EVENT 2: Summer Dog Show
+- Picture Count: 5
+- Picture Locators: E2P1, E2P2, E2P3, E2P4, E2P5
+- Files: event_2_pic_1.jpg through event_2_pic_5.jpg
+
+EVENT 3: Bournemouth Dance Finals
+- Picture Count: 4
+- Picture Locators: E3P1, E3P2, E3P3, E3P4
+- Files: event_3_pic_1.jpg through event_3_pic_4.jpg
+
+EVENT 4: Vintage Car Rally
+- Picture Count: 8
+- Picture Locators: E4P1, E4P2, E4P3, E4P4, E4P5, E4P6, E4P7, E4P8
+- Files: event_4_pic_1.jpg through event_4_pic_8.jpg
+
+EVENT 5: Community Art Festival
+- Picture Count: 4
+- Picture Locators: E5P1, E5P2, E5P3, E5P4
+- Files: event_5_pic_1.jpg through event_5_pic_4.jpg
+
+EVENT 6: Hastings Beach BBQ
+- Picture Count: 3
+- Picture Locators: E6P1, E6P2, E6P3
+- Files: event_6_pic_1.jpg through event_6_pic_3.jpg
+
+EVENT 7: Public Open Mic Night
+- Picture Count: 4
+- Picture Locators: E7P1, E7P2, E7P3, E7P4
+- Files: event_7_pic_1.jpg through event_7_pic_4.jpg
+
+EVENT 8: Science Expo
+- Picture Count: 6
+- Picture Locators: E8P1, E8P2, E8P3, E8P4, E8P5, E8P6
+- Files: event_8_pic_1.jpg through event_8_pic_6.jpg
+
+EVENT 9: Food Truck Fiesta
+- Picture Count: 7
+- Picture Locators: E9P1, E9P2, E9P3, E9P4, E9P5, E9P6, E9P7
+- Files: event_9_pic_1.jpg through event_9_pic_7.jpg
+
+EVENT 10: Marathon Finish Line
+- Picture Count: 8
+- Picture Locators: E10P1, E10P2, E10P3, E10P4, E10P5, E10P6, E10P7, E10P8
+- Files: event_10_pic_1.jpg through event_10_pic_8.jpg
+
+EVENT 11: Photography Walk
+- Picture Count: 5
+- Picture Locators: E11P1, E11P2, E11P3, E11P4, E11P5
+- Files: event_11_pic_1.jpg through event_11_pic_5.jpg
+
+EVENT 12: Community Fireworks Night
+- Picture Count: 5
+- Picture Locators: E12P1, E12P2, E12P3, E12P4, E12P5
+- Files: event_12_pic_1.jpg through event_12_pic_5.jpg
+
+EVENT 13: Portsmouth Food Festival
+- Picture Count: 4
+- Picture Locators: E13P1, E13P2, E13P3, E13P4
+- Files: event_13_pic_1.jpg through event_13_pic_4.jpg
+
+EVENT 14: University Open Day
+- Picture Count: 6
+- Picture Locators: E14P1, E14P2, E14P3, E14P4, E14P5, E14P6
+- Files: event_14_pic_1.jpg through event_14_pic_6.jpg
+
+EVENT 15: Charity Fun Run
+- Picture Count: 8
+- Picture Locators: E15P1, E15P2, E15P3, E15P4, E15P5, E15P6, E15P7, E15P8
+- Files: event_15_pic_1.jpg through event_15_pic_8.jpg
+
+EVENT 16: Smith Family Portraits (Private)
+- Picture Count: 3
+- Picture Locators: E16P1, E16P2, E16P3
+- Files: event_16_pic_1.jpg through event_16_pic_3.jpg
+
+EVENT 17: Olivia & Marcus Wedding (Private)
+- Picture Count: 8
+- Picture Locators: E17P1, E17P2, E17P3, E17P4, E17P5, E17P6, E17P7, E17P8
+- Files: event_17_pic_1.jpg through event_17_pic_8.jpg
+
+EVENT 18: St. Mary's Year 11 Prom (Private)
+- Picture Count: 5
+- Picture Locators: E18P1, E18P2, E18P3, E18P4, E18P5
+- Files: event_18_pic_1.jpg through event_18_pic_5.jpg
+
+EVENT 19: Jones Family Reunion (Private)
+- Picture Count: 5
+- Picture Locators: E19P1, E19P2, E19P3, E19P4, E19P5
+- Files: event_19_pic_1.jpg through event_19_pic_5.jpg
+
+EVENT 20: Corporate Headshots (Private)
+- Picture Count: 4
+- Picture Locators: E20P1, E20P2, E20P3, E20P4
+- Files: event_20_pic_1.jpg through event_20_pic_4.jpg
+
+EVENT 21: Lucy's 18th Birthday (Private)
+- Picture Count: 6
+- Picture Locators: E21P1, E21P2, E21P3, E21P4, E21P5, E21P6
+- Files: event_21_pic_1.jpg through event_21_pic_6.jpg
+
+EVENT 22: Wilson Engagement Party (Private)
+- Picture Count: 4
+- Picture Locators: E22P1, E22P2, E22P3, E22P4
+- Files: event_22_pic_1.jpg through event_22_pic_4.jpg
+
+EVENT 23: Model Portfolio Shoot (Private)
+- Picture Count: 3
+- Picture Locators: E23P1, E23P2, E23P3
+- Files: event_23_pic_1.jpg through event_23_pic_3.jpg
+
+EVENT 24: Harris Baby Shower (Private)
+- Picture Count: 5
+- Picture Locators: E24P1, E24P2, E24P3, E24P4, E24P5
+- Files: event_24_pic_1.jpg through event_24_pic_5.jpg
+
+EVENT 25: Studio Christmas Session (Private)
+- Picture Count: 3
+- Picture Locators: E25P1, E25P2, E25P3
+- Files: event_25_pic_1.jpg through event_25_pic_3.jpg
+
+EVENT 26: Pet Portraits Day (Private)
+- Picture Count: 8
+- Picture Locators: E26P1, E26P2, E26P3, E26P4, E26P5, E26P6, E26P7, E26P8
+- Files: event_26_pic_1.jpg through event_26_pic_8.jpg
+
+EVENT 27: Graduation Photos Retake (Private)
+- Picture Count: 4
+- Picture Locators: E27P1, E27P2, E27P3, E27P4
+- Files: event_27_pic_1.jpg through event_27_pic_4.jpg
+
+EVENT 28: Client Branding Session (Private)
+- Picture Count: 3
+- Picture Locators: E28P1, E28P2, E28P3
+- Files: event_28_pic_1.jpg through event_28_pic_3.jpg
+
+EVENT 29: Family Christmas Portraits (Private)
+- Picture Count: 3
+- Picture Locators: E29P1, E29P2, E29P3
+- Files: event_29_pic_1.jpg through event_29_pic_3.jpg
+
+EVENT 30: Engagement Shoot – Priya & Jay (Private)
+- Picture Count: 5
+- Picture Locators: E30P1, E30P2, E30P3, E30P4, E30P5
+- Files: event_30_pic_1.jpg through event_30_pic_5.jpg
+
+==================
+TOTAL PICTURES: 148
+==================
+
+NOTE: Picture locators are sequential per event (E{event_id}P{sequential_number})
+      NOT based on the picture_id from the database.

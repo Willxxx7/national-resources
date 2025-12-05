@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography Management - Orders</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Local FontAwesome -->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="fontawesome/css/solid.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="orders.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-container">
+        <div class="header-logo-section">
+          <a href="dashboard.html" class="logo-link">
+            <img src="images/logo.svg" alt="Logo" class="logo-image" />
+            <span class="logo-text">Photography Management</span>
+          </a>
+        </div>
+        <div class="header-user">
+          <span class="welcome-text">Welcome, Admin User</span>
+          <button type="button" class="btn-logout">
+            <i class="fa fa-sign-out-alt"></i>
+            <span class="btn-text">Logout</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="dashboard-layout">
+        <nav class="navigation">
+          <ul class="links">
+            <li>
+              <a href="dashboard.html">
+                <i class="fa fa-tachometer-alt"></i>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="events.html">
+                <i class="fa fa-calendar"></i>
+                Events
+              </a>
+            </li>
+            <li>
+              <a href="pictures.html">
+                <i class="fa fa-image"></i>
+                Pictures
+              </a>
+            </li>
+            <li class="active">
+              <a href="orders.html">
+                <i class="fa fa-shopping-cart"></i>
+                Orders
+              </a>
+            </li>
+            <li>
+              <a href="settings.html">
+                <i class="fa fa-cog"></i>
+                Settings
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="content">
+          <div class="page-header">
+            <h2>Orders</h2>
+          </div>
+
+          <div class="table-responsive">
+            <table class="themed-table">
+              <thead>
+                <tr>
+                  <th>Order #</th>
+                  <th>Customer</th>
+                  <th>Order Date</th>
+                  <th>Completed Date</th>
+                  <th class="hide-mobile">Note</th>
+                  <th>Order Total</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="order-show.html">#ORD-001</a></td>
+                  <td>John Smith</td>
+                  <td>2025-01-15</td>
+                  <td>N/A</td>
+                  <td class="hide-mobile">Rush delivery</td>
+                  <td>£45.00</td>
+                  <td>
+                    <span class="status-badge status-pending">
+                      <i class="fa fa-clock"></i>
+                      <span class="hide-mobile-text">Pending</span>
+                    </span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button
+                        class="btn-icon btn-complete"
+                        title="Complete order"
+                      >
+                        <i class="fa fa-check"></i>
+                      </button>
+                      <button class="btn-icon btn-cancel" title="Cancel order">
+                        <i class="fa fa-times-circle"></i>
+                      </button>
+                      <button class="btn-icon btn-delete" title="Delete order">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="order-show.html">#ORD-002</a></td>
+                  <td>Sarah Johnson</td>
+                  <td>2025-01-12</td>
+                  <td>2025-01-18</td>
+                  <td class="hide-mobile">Standard delivery</td>
+                  <td>£32.50</td>
+                  <td>
+                    <span class="status-badge status-completed">
+                      <i class="fa fa-check-circle"></i>
+                      <span class="hide-mobile-text">Completed</span>
+                    </span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button
+                        class="btn-icon btn-pending"
+                        title="Mark as Pending"
+                      >
+                        <i class="fa fa-undo"></i>
+                      </button>
+                      <button class="btn-icon btn-cancel" title="Cancel order">
+                        <i class="fa fa-times-circle"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="order-show.html">#ORD-003</a></td>
+                  <td>Michael Brown</td>
+                  <td>2025-01-10</td>
+                  <td>N/A</td>
+                  <td class="hide-mobile">Canvas print</td>
+                  <td>£58.00</td>
+                  <td>
+                    <span class="status-badge status-cancelled">
+                      <i class="fa fa-ban"></i>
+                      <span class="hide-mobile-text">Cancelled</span>
+                    </span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button
+                        class="btn-icon btn-pending"
+                        title="Mark as Pending"
+                      >
+                        <i class="fa fa-undo"></i>
+                      </button>
+                      <button class="btn-icon btn-delete" title="Delete order">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-copyright">&copy; 2025 Photography Management</div>
+    </footer>
+  </body>
+</html>

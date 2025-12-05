@@ -1,0 +1,65 @@
+PICTURES DATA
+=============
+
+Pictures are associated with events and stored in event folders.
+Picture naming format: event_{event_id}_pic_{number}.jpg
+
+PICTURE COUNT PER EVENT
+=======================
+
+Event 1 (Portsmouth Graduation 2025): 4 pictures
+  - event_1_pic_1.jpg
+  - event_1_pic_2.jpg
+  - event_1_pic_3.jpg
+  - event_1_pic_4.jpg
+
+Event 2 (Summer Dog Show): 5 pictures
+Event 3 (Bournemouth Dance Finals): 4 pictures
+Event 4 (Vintage Car Rally): 8 pictures
+Event 5 (Community Art Festival): 4 pictures
+Event 6 (Hastings Beach BBQ): 3 pictures
+Event 7 (Public Open Mic Night): 4 pictures
+Event 8 (Science Expo): 6 pictures
+Event 9 (Food Truck Fiesta): 7 pictures
+Event 10 (Marathon Finish Line): 8 pictures
+Event 11 (Photography Walk): 5 pictures
+Event 12 (Community Fireworks Night): 5 pictures
+Event 13 (Portsmouth Food Festival): 4 pictures
+Event 14 (University Open Day): 6 pictures
+Event 15 (Charity Fun Run): 8 pictures
+Event 16 (Smith Family Portraits): 3 pictures
+Event 17 (Olivia & Marcus Wedding): 8 pictures
+Event 18 (St. Mary's Year 11 Prom): 5 pictures
+Event 19 (Jones Family Reunion): 5 pictures
+Event 20 (Corporate Headshots): 4 pictures
+Event 21 (Lucy's 18th Birthday): 6 pictures
+Event 22 (Wilson Engagement Party): 4 pictures
+Event 23 (Model Portfolio Shoot): 3 pictures
+Event 24 (Harris Baby Shower): 5 pictures
+Event 25 (Studio Christmas Session): 3 pictures
+Event 26 (Pet Portraits Day): 8 pictures
+Event 27 (Graduation Photos Retake): 4 pictures
+Event 28 (Client Branding Session): 3 pictures
+Event 29 (Family Christmas Portraits): 3 pictures
+Event 30 (Engagement Shoot – Priya & Jay): 5 pictures
+
+PICTURE ATTRIBUTES
+==================
+- pic_id: Auto-increment primary key
+- event_id: Foreign key to events table
+- pic_name: Filename (e.g., event_1_pic_1.jpg)
+- pic_upload_date: Date picture was uploaded (typically day after event)
+- pic_note: Optional note field
+- pic_locator: Unique ID format "E{event_id}P{sequence}" (e.g., E1P1, E1P2, E7P1, E7P2)
+- pic_is_active: Boolean (true/false)
+- pic_path: Storage path (e.g., events/1/event_1_pic_1.jpg)
+- pic_upload_note: Optional upload note
+
+IMPORTANT NOTES
+===============
+1. Pictures DO NOT have a direct category relationship
+2. Pictures inherit category from their event
+3. Picture locator uses sequential numbering per event (E7P1, E7P2, E7P3)
+4. All pictures are stored in: storage/app/public/events/{event_id}/
+5. Total pictures across all events: ~150
+6. Upload date is typically 1 day after the event date

@@ -1,0 +1,61 @@
+<!--PATH: d2/d2-option2-text-analyzer/d2-js/index.html - DO NOT MODIFY-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D2 - Text Analyzer (Node.js)</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Text Content Analyzer - Node.js</h1>
+    </header>
+
+    <main>
+      <div class="analyzer-container">
+        <h2>Text Analysis Tool</h2>
+
+        <form id="analyzerForm" class="analyzer-form">
+          <div class="form-group">
+            <label for="textContent">Text to Analyze:</label>
+            <textarea
+              id="textContent"
+              name="textContent"
+              placeholder="Enter or paste text here to analyze..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit">Analyze Text</button>
+            <button type="button" id="clearBtn">Clear</button>
+          </div>
+        </form>
+
+        <div class="result-container">
+          <h3>Analysis Results:</h3>
+          <div id="analysisResult">Submit text to see analysis</div>
+        </div>
+
+        <div class="validation-info">
+          <h3>Metrics Provided:</h3>
+          <ul>
+            <li>Character count (with and without spaces)</li>
+            <li>Word count</li>
+            <li>Sentence count</li>
+            <li>Paragraph count</li>
+            <li>Average word length</li>
+            <li>Estimated reading time</li>
+            <li>Most common words (keyword density)</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <!--Do not modify any code after this line-->
+    <footer id="dynamicFooter"></footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,218 @@
+EVENTS DATA
+===========
+
+PUBLIC EVENTS (15 total)
+========================
+
+Event 1: Portsmouth Graduation 2025
+  Category: Graduation (ID: 1)
+  Type: Public
+  City: Portsmouth
+  Date: 2025-07-01 at 14:00:00
+  Note: Open to public. Photos available by student name.
+
+Event 2: Summer Dog Show
+  Category: Pet Events (ID: 10)
+  Type: Public
+  City: Chichester
+  Date: 2025-08-10 at 12:00:00
+  Note: Open event. Pet owners can search by dog name.
+
+Event 3: Bournemouth Dance Finals
+  Category: Competition (ID: 3)
+  Type: Public
+  City: Bournemouth
+  Date: 2025-09-03 at 16:00:00
+
+Event 4: Vintage Car Rally
+  Category: Festival (ID: 2)
+  Type: Public
+  City: Brighton
+  Date: 2025-08-05 at 13:00:00
+  Note: Free for all. Classics and modern cars.
+
+Event 5: Community Art Festival
+  Category: Festival (ID: 2)
+  Type: Public
+  City: Portsmouth
+  Date: 2025-07-22 at 10:00:00
+  Note: Local artists exhibit works.
+
+Event 6: Hastings Beach BBQ
+  Category: Community (ID: 13)
+  Type: Public
+  City: Hastings
+  Date: 2025-07-19 at 18:00:00
+
+Event 7: Public Open Mic Night
+  Category: Community (ID: 13)
+  Type: Public
+  City: Reading
+  Date: 2025-07-12 at 20:00:00
+  Note: Singers and poets welcome.
+
+Event 8: Science Expo
+  Category: Festival (ID: 2)
+  Type: Public
+  City: Oxford
+  Date: 2025-08-15 at 11:00:00
+
+Event 9: Food Truck Fiesta
+  Category: Festival (ID: 2)
+  Type: Public
+  City: Southampton
+  Date: 2025-07-28 at 12:00:00
+  Note: Try 20+ food vendors.
+
+Event 10: Marathon Finish Line
+  Category: Competition (ID: 3)
+  Type: Public
+  City: London
+  Date: 2025-10-01 at 14:00:00
+  Note: Public cheering area and photos.
+
+Event 11: Photography Walk
+  Category: Photography Walks (ID: 12)
+  Type: Public
+  City: Bath
+  Date: 2025-06-30 at 09:00:00
+
+Event 12: Community Fireworks Night
+  Category: Seasonal (ID: 11)
+  Type: Public
+  City: Exeter
+  Date: 2025-11-05 at 19:00:00
+  Note: Free entry, bring blankets.
+
+Event 13: Portsmouth Food Festival
+  Category: Festival (ID: 2)
+  Type: Public
+  City: Portsmouth
+  Date: 2025-07-18 at 12:00:00
+  Note: Open to all. Food stalls and live music.
+
+Event 14: University Open Day
+  Category: School Events (ID: 7)
+  Type: Public
+  City: Southampton
+  Date: 2025-09-14 at 10:00:00
+  Note: For prospective students and families.
+
+Event 15: Charity Fun Run
+  Category: Charity (ID: 8)
+  Type: Public
+  City: Guildford
+  Date: 2025-08-20 at 09:30:00
+
+
+PRIVATE EVENTS (15 total)
+==========================
+
+Event 16: Smith Family Portraits
+  Category: Private Session (ID: 4)
+  Type: Private
+  City: Southampton
+  Date: 2025-06-15 at 10:30:00
+  Note: Private booking. Access restricted to family.
+
+Event 17: Olivia & Marcus Wedding
+  Category: Wedding/Engagement (ID: 5)
+  Type: Private
+  City: Winchester
+  Date: 2025-06-28 at 15:00:00
+
+Event 18: St. Mary's Year 11 Prom
+  Category: School Events (ID: 7)
+  Type: Private
+  City: Guildford
+  Date: 2025-07-05 at 19:00:00
+  Note: Private school prom. Code required to access photos.
+
+Event 19: Jones Family Reunion
+  Category: Private Session (ID: 4)
+  Type: Private
+  City: Oxford
+  Date: 2025-07-14 at 13:30:00
+
+Event 20: Corporate Headshots
+  Category: Corporate (ID: 9)
+  Type: Private
+  City: London
+  Date: 2025-08-01 at 09:00:00
+  Note: Photoshoot for internal use only.
+
+Event 21: Lucy's 18th Birthday
+  Category: Private Session (ID: 4)
+  Type: Private
+  City: Reading
+  Date: 2025-09-10 at 18:00:00
+  Note: Private garden party celebration.
+
+Event 22: Wilson Engagement Party
+  Category: Wedding/Engagement (ID: 5)
+  Type: Private
+  City: Bath
+  Date: 2025-08-12 at 17:00:00
+
+Event 23: Model Portfolio Shoot
+  Category: Private Session (ID: 4)
+  Type: Private
+  City: Brighton
+  Date: 2025-07-25 at 14:00:00
+  Note: Booked model sessions only.
+
+Event 24: Harris Baby Shower
+  Category: Private Session (ID: 4)
+  Type: Private
+  City: Bristol
+  Date: 2025-06-27 at 15:00:00
+  Note: Photos shared only with attendees.
+
+Event 25: Studio Christmas Session
+  Category: Seasonal (ID: 11)
+  Type: Private
+  City: Southampton
+  Date: 2025-12-12 at 11:00:00
+
+Event 26: Pet Portraits Day
+  Category: Pet Events (ID: 10)
+  Type: Private
+  City: Portsmouth
+  Date: 2025-07-03 at 10:00:00
+  Note: Private bookings only.
+
+Event 27: Graduation Photos Retake
+  Category: Graduation (ID: 1)
+  Type: Private
+  City: Guildford
+  Date: 2025-07-15 at 14:00:00
+  Note: Only for students who missed main event.
+
+Event 28: Client Branding Session
+  Category: Corporate (ID: 9)
+  Type: Private
+  City: Oxford
+  Date: 2025-09-03 at 09:00:00
+
+Event 29: Family Christmas Portraits
+  Category: Seasonal (ID: 11)
+  Type: Private
+  City: Chichester
+  Date: 2025-12-03 at 13:00:00
+  Note: Access via family login only.
+
+Event 30: Engagement Shoot – Priya & Jay
+  Category: Wedding/Engagement (ID: 5)
+  Type: Private
+  City: Winchester
+  Date: 2025-10-12 at 15:00:00
+
+
+SUMMARY
+=======
+Total Events: 30
+Public Events: 15 (IDs 1-15)
+Private Events: 15 (IDs 16-30)
+
+Event Types: "public" or "private"
+Each event has a folder path generated as: events/{event_name}

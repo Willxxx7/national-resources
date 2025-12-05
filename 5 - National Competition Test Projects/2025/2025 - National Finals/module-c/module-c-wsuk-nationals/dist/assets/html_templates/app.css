@@ -1,0 +1,201 @@
+@import 'patterns.css';
+@import 'fontawesome/css/all.css';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Wrapper */
+.app-wrapper {
+  background: var(--color-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--app-width);
+  margin-inline: auto;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100vw;
+  background: var(--color-dark-1);
+  color: var(--color-white);
+  box-shadow: var(--shadow-2xl);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  margin-left: calc(50% - 50vw);
+}
+
+.header-inner {
+  max-width: var(--app-width);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-white);
+}
+
+.logo-img {
+  width: 5%;
+  min-width: 50px;
+}
+
+.nav ul {
+  display: flex;
+  gap: var(--gap-4);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-size: var(--text-xl);
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* Basket badge */
+.basket-link {
+  position: relative;
+}
+
+.basket-count {
+  position: absolute;
+  top: -0.75rem;
+  right: -1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  font-size: var(--text-sm);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+}
+
+main {
+  flex: 1 1 0;
+  width: 100%;
+  height: 100%;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2);
+}
+
+.page-header h2 {
+  text-align: center;
+  font-size: var(--text-4xl);
+  font-weight: bold;
+  color: var(--color-primary-light);
+}
+
+.page-header h3 {
+  text-align: center;
+  font-size: var(--text-2xl);
+  color: var(--gray-600);
+}
+
+.button-primary {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+  padding: var(--gap-2) var(--gap-4);
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: var(--text-xl);
+  font-weight: bold;
+  text-align: center;
+  border-radius: var(--rounded-sm);
+  text-decoration: none;
+}
+
+.button-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2);
+}
+
+.form-group label {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.form-group .required {
+  color: var(--red-500);
+}
+
+.form-group input[disabled] {
+  color: var(--gray-300);
+  cursor: not-allowed;
+}
+
+/* Footer */
+.footer {
+  background: var(--color-dark-1);
+  color: var(--color-white);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: auto;
+  /* Push footer to bottom when content is short */
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.footer-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  text-align: center;
+  font-size: 2.25rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.footer-bottom {
+  border-top: 0.5px solid rgba(31, 41, 55, 0.7);
+  text-align: center;
+  color: #9ca3af;
+  padding: 0.5rem 0;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

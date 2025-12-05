@@ -1,0 +1,87 @@
+CUSTOMERS
+=========
+
+Customer 1:
+  ID: 1
+  First Name: John
+  Last Name: Doe
+  Phone: 07123456689
+  Address 1: 123 Street
+  Address 2: (none)
+  Postcode: AB12CD
+  Email: john.doe@mail.com
+
+Customer 2:
+  ID: 2
+  First Name: Alice
+  Last Name: Smith
+  Phone: 07111222333
+  Address 1: 456 Avenue
+  Address 2: (none)
+  Postcode: CD34EF
+  Email: alice.smith@mail.com
+
+Customer 3:
+  ID: 3
+  First Name: Michael
+  Last Name: Brown
+  Phone: 07987654321
+  Address 1: 789 Boulevard
+  Address 2: (none)
+  Postcode: EF56GH
+  Email: michael.brown@mail.com
+
+Customer 4:
+  ID: 4
+  First Name: Emily
+  Last Name: Davis
+  Phone: 07456789123
+  Address 1: 22 Green Lane
+  Address 2: Flat 3A
+  Postcode: GH78IJ
+  Email: emily.davis@mail.com
+
+Customer 5:
+  ID: 5
+  First Name: Olivia
+  Last Name: Wilson
+  Phone: 07555667788
+  Address 1: 10 Kings Road
+  Address 2: (none)
+  Postcode: JK90LM
+  Email: olivia.wilson@mail.com
+
+Customer 6:
+  ID: 6
+  First Name: Sophie
+  Last Name: Taylor
+  Phone: 07711223344
+  Address 1: 5 Orchard View
+  Address 2: (none)
+  Postcode: MN12OP
+  Email: sophie.taylor@mail.com
+
+Customer 7:
+  ID: 7
+  First Name: David
+  Last Name: Smith
+  Phone: 07741283244
+  Address 1: 2 Paddington Street
+  Address 2: (none)
+  Postcode: SW12EP
+  Email: david.smith@mail.com
+
+Customer 8:
+  ID: 8
+  First Name: Marcus
+  Last Name: Wilson
+  Phone: 07515647758
+  Address 1: 10 Kings Road
+  Address 2: (none)
+  Postcode: JK90LM
+  Email: marcus.wilson@mail.com
+
+NOTES:
+- Total customers: 8
+- Customer IDs are sequential starting from 1
+- Email addresses are unique

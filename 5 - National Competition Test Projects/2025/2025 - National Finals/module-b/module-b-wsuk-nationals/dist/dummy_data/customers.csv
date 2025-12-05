@@ -1,0 +1,9 @@
+cust_id,cust_fname,cust_lname,cust_phone,cust_addr1,cust_addr2,cust_postcode,cust_email
+1,John,Doe,07123456689,123 Street,,AB12CD,john.doe@mail.com
+2,Alice,Smith,07111222333,456 Avenue,,CD34EF,alice.smith@mail.com
+3,Michael,Brown,07987654321,789 Boulevard,,EF56GH,michael.brown@mail.com
+4,Emily,Davis,07456789123,22 Green Lane,Flat 3A,GH78IJ,emily.davis@mail.com
+5,Olivia,Wilson,07555667788,10 Kings Road,,JK90LM,olivia.wilson@mail.com
+6,Sophie,Taylor,07711223344,5 Orchard View,,MN12OP,sophie.taylor@mail.com
+7,David,Smith,07741283244,2 Paddington Street,,SW12EP,david.smith@mail.com
+8,Marcus,Wilson,07515647758,10 Kings Road,,JK90LM,marcus.wilson@mail.com

@@ -1,0 +1,16 @@
+ADMIN USERS
+============
+
+Admin 1:
+  Name: Admin User1
+  Email: admin1@admin.com
+  Password: Password1
+
+Admin 2:
+  Name: Admin User2
+  Email: admin2@admin.com
+  Password: Password2
+
+NOTES:
+- These are the default admin accounts for the system
+- Passwords should be hashed before storing in database

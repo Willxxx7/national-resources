@@ -1,0 +1,57 @@
+<!--PATH: d2/d2-php/index.php - DO NOT MODIFY-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D2 - Text Counter (PHP)</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Text Counter - PHP</h1>
+    </header>
+
+    <main>
+      <div class="analyzer-container">
+        <h2>Text Counter Tool</h2>
+
+        <form id="analyzerForm" class="analyzer-form">
+          <div class="form-group">
+            <label for="textContent">Text to Analyze:</label>
+            <textarea
+              id="textContent"
+              name="textContent"
+              placeholder="Enter or paste text here to count..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit">Count Text</button>
+            <button type="button" id="clearBtn">Clear</button>
+          </div>
+        </form>
+
+        <div class="result-container">
+          <h3>Results:</h3>
+          <div id="analysisResult">Submit text to see results</div>
+        </div>
+
+        <div class="validation-info">
+          <h3>Metrics Provided:</h3>
+          <ul>
+            <li>Character count (with spaces)</li>
+            <li>Character count (without spaces)</li>
+            <li>Word count</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <!--Do not modify any code after this line-->
+    <footer id="dynamicFooter"></footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

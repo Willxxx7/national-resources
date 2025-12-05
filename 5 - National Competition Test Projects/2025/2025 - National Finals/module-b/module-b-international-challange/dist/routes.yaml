@@ -1,0 +1,652 @@
+openapi: 3.0.3
+info:
+  title: WorldSkills UK Nationals 2025 - Module B Routes Specification
+  description: Spark Studios application routes and endpoints
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8000
+
+components:
+  securitySchemes:
+    sessionAuth:
+      type: apiKey
+      in: cookie
+      name: laravel_session
+      description: Session-based authentication via cookies
+
+tags:
+  - name: Auth
+    description: Authentication endpoints
+  - name: Dashboard
+    description: Dashboard and statistics
+  - name: Settings
+    description: Application settings and configuration
+  - name: Categories
+    description: Event category management
+  - name: PictureSizes
+    description: Picture size management
+  - name: Users
+    description: User management
+  - name: Pictures
+    description: Picture management
+  - name: Events
+    description: Event management
+  - name: EventAccess
+    description: Event access code management
+  - name: Orders
+    description: Order management
+  - name: Public
+    description: Public guest access endpoints
+
+paths:
+  # ==========================================
+  # Authentication Routes
+  # ==========================================
+  /login:
+    get:
+      summary: Display login form
+      tags: [Auth]
+      description: Shows the login page with admin and guest access options
+      responses:
+        '200':
+          description: Login page displayed
+    post:
+      summary: Process admin login
+      tags: [Auth]
+      description: Authenticates admin user credentials
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '302':
+          description: Redirect to dashboard on success or back to login on failure
+
+  /logout:
+    post:
+      summary: Logout admin user
+      tags: [Auth]
+      security:
+        - sessionAuth: []
+      description: Logs out authenticated admin and destroys session
+      responses:
+        '302':
+          description: Redirect to login page
+
+  # ==========================================
+  # Dashboard
+  # ==========================================
+  /:
+    get:
+      summary: Display dashboard
+      tags: [Dashboard]
+      security:
+        - sessionAuth: []
+      description: Shows statistics and quick actions for authenticated admins
+      responses:
+        '200':
+          description: Dashboard page displayed
+
+  # ==========================================
+  # Settings Routes
+  # ==========================================
+  /settings:
+    get:
+      summary: Display settings page
+      tags: [Settings]
+      security:
+        - sessionAuth: []
+      description: Main settings page with links to categories, picture sizes, and users
+      responses:
+        '200':
+          description: Settings page displayed
+
+  # ==========================================
+  # Categories
+  # ==========================================
+  /settings/categories:
+    get:
+      summary: List all categories
+      tags: [Categories]
+      security:
+        - sessionAuth: []
+      description: Display all event categories with create, update, delete actions
+      responses:
+        '200':
+          description: Categories list displayed
+    post:
+      summary: Create new category
+      tags: [Categories]
+      security:
+        - sessionAuth: []
+      description: Store a new event category
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /settings/categories/{category}:
+    put:
+      summary: Update category
+      tags: [Categories]
+      security:
+        - sessionAuth: []
+      description: Update an existing category
+      parameters:
+        - name: category
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+    delete:
+      summary: Delete category
+      tags: [Categories]
+      security:
+        - sessionAuth: []
+      description: Remove a category from the system
+      parameters:
+        - name: category
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  # ==========================================
+  # Picture Sizes
+  # ==========================================
+  /settings/picture-sizes:
+    get:
+      summary: List all picture sizes
+      tags: [PictureSizes]
+      security:
+        - sessionAuth: []
+      description: Display all available picture sizes with pricing
+      responses:
+        '200':
+          description: Picture sizes list displayed
+    post:
+      summary: Create new picture size
+      tags: [PictureSizes]
+      security:
+        - sessionAuth: []
+      description: Add a new picture size option
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /settings/picture-sizes/{pictureSize}:
+    put:
+      summary: Update picture size
+      tags: [PictureSizes]
+      security:
+        - sessionAuth: []
+      description: Update an existing picture size
+      parameters:
+        - name: pictureSize
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+    delete:
+      summary: Delete picture size
+      tags: [PictureSizes]
+      security:
+        - sessionAuth: []
+      description: Remove a picture size option
+      parameters:
+        - name: pictureSize
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  # ==========================================
+  # Users
+  # ==========================================
+  /settings/users:
+    get:
+      summary: List all users
+      tags: [Users]
+      security:
+        - sessionAuth: []
+      description: Display all admin users with management options
+      responses:
+        '200':
+          description: Users list displayed
+    post:
+      summary: Create new user
+      tags: [Users]
+      security:
+        - sessionAuth: []
+      description: Register a new admin user
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /settings/users/create:
+    get:
+      summary: Display user creation form
+      tags: [Users]
+      security:
+        - sessionAuth: []
+      description: Show form to create new admin user
+      responses:
+        '200':
+          description: User creation form displayed
+
+  /settings/users/{user}:
+    delete:
+      summary: Delete user
+      tags: [Users]
+      security:
+        - sessionAuth: []
+      description: Remove an admin user
+      parameters:
+        - name: user
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /settings/users/{user}/suspend:
+    post:
+      summary: Suspend user
+      tags: [Users]
+      security:
+        - sessionAuth: []
+      description: Suspend admin user account
+      parameters:
+        - name: user
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /settings/users/{user}/unsuspend:
+    post:
+      summary: Unsuspend user
+      tags: [Users]
+      security:
+        - sessionAuth: []
+      description: Reactivate suspended admin user
+      parameters:
+        - name: user
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  # ==========================================
+  # Pictures
+  # ==========================================
+  /pictures:
+    get:
+      summary: List all pictures
+      tags: [Pictures]
+      security:
+        - sessionAuth: []
+      description: Display all pictures with filtering and sorting options
+      responses:
+        '200':
+          description: Pictures list displayed
+    post:
+      summary: Upload new picture
+      tags: [Pictures]
+      security:
+        - sessionAuth: []
+      description: Upload and store a new picture
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /pictures/create:
+    get:
+      summary: Display picture upload form
+      tags: [Pictures]
+      security:
+        - sessionAuth: []
+      description: Show form to upload new picture
+      responses:
+        '200':
+          description: Picture upload form displayed
+
+  /pictures/{picture}:
+    delete:
+      summary: Delete picture
+      tags: [Pictures]
+      security:
+        - sessionAuth: []
+      description: Remove a picture from the system
+      parameters:
+        - name: picture
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /pictures/{picture}/edit:
+    get:
+      summary: Display picture edit form
+      tags: [Pictures]
+      security:
+        - sessionAuth: []
+      description: Show form to edit picture details
+      parameters:
+        - name: picture
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Picture edit form displayed
+
+    put:
+      summary: Update picture
+      tags: [Pictures]
+      security:
+        - sessionAuth: []
+      description: Update picture information
+      parameters:
+        - name: picture
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  # ==========================================
+  # Events
+  # ==========================================
+  /events:
+    get:
+      summary: List all events
+      tags: [Events]
+      security:
+        - sessionAuth: []
+      description: Display all events with filtering and sorting options
+      responses:
+        '200':
+          description: Events list displayed
+    post:
+      summary: Create new event
+      tags: [Events]
+      security:
+        - sessionAuth: []
+      description: Create a new event (public or private)
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /events/create:
+    get:
+      summary: Display event creation form
+      tags: [Events]
+      security:
+        - sessionAuth: []
+      description: Show form to create new event
+      responses:
+        '200':
+          description: Event creation form displayed
+
+  /events/{event}:
+    delete:
+      summary: Delete event
+      tags: [Events]
+      security:
+        - sessionAuth: []
+      description: Remove an event from the system
+      parameters:
+        - name: event
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /events/{event}/edit:
+    get:
+      summary: Display event edit form
+      tags: [Events]
+      security:
+        - sessionAuth: []
+      description: Show form to edit event details
+      parameters:
+        - name: event
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Event edit form displayed
+
+    put:
+      summary: Update event
+      tags: [Events]
+      security:
+        - sessionAuth: []
+      description: Update event information
+      parameters:
+        - name: event
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  # ==========================================
+  # Event Access Management
+  # ==========================================
+  /events/{event}/access:
+    get:
+      summary: Manage event access codes
+      tags: [EventAccess]
+      security:
+        - sessionAuth: []
+      description: Display and manage access codes for private events
+      parameters:
+        - name: event
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Event access management page displayed
+    post:
+      summary: Create new access code
+      tags: [EventAccess]
+      security:
+        - sessionAuth: []
+      description: Generate or create custom access code for event
+      parameters:
+        - name: event
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  /events-access/{access}:
+    patch:
+      summary: Toggle access code status
+      tags: [EventAccess]
+      security:
+        - sessionAuth: []
+      description: Activate or deactivate an access code
+      parameters:
+        - name: access
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+    delete:
+      summary: Delete access code
+      tags: [EventAccess]
+      security:
+        - sessionAuth: []
+      description: Remove an access code
+      parameters:
+        - name: access
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  # ==========================================
+  # Orders
+  # ==========================================
+  /orders:
+    get:
+      summary: List all orders
+      tags: [Orders]
+      security:
+        - sessionAuth: []
+      description: Display all customer orders with filtering options
+      responses:
+        '200':
+          description: Orders list displayed
+
+  /orders/{order}:
+    get:
+      summary: View order details
+      tags: [Orders]
+      security:
+        - sessionAuth: []
+      description: Display detailed information about a specific order
+      parameters:
+        - name: order
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Order details displayed
+    put:
+      summary: Update order
+      tags: [Orders]
+      security:
+        - sessionAuth: []
+      description: Update order status or details
+      parameters:
+        - name: order
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+    delete:
+      summary: Delete order
+      tags: [Orders]
+      security:
+        - sessionAuth: []
+      description: Remove an order from the system
+      parameters:
+        - name: order
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '302':
+          description: Redirect back with success or error message
+
+  # ==========================================
+  # Public Guest Routes
+  # ==========================================
+  /public-events:
+    get:
+      summary: View public events
+      tags: [Public]
+      description: Display all public events accessible without authentication
+      responses:
+        '200':
+          description: Public events page displayed
+
+  /verify-access-code:
+    get:
+      summary: Verify access code
+      tags: [Public]
+      description: Verify and authenticate guest access code for private events
+      parameters:
+        - name: access_code
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '302':
+          description: Redirect to event or back to login with error
+
+  /events/{path}:
+    get:
+      summary: View event details
+      tags: [Public]
+      description: Display event and pictures (requires access code for private events)
+      parameters:
+        - name: path
+          in: path
+          required: true
+          description: Event folder path (can include slashes)
+          schema:
+            type: string
+        - name: access_code
+          in: query
+          required: false
+          description: Access code for private events (not required for authenticated admins)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Event details displayed or access code form shown

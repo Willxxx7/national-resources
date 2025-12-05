@@ -1,0 +1,100 @@
+<!--PATH: d5/index.html - DO NOT MODIFY -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D5 - Quiz Scorer</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>D5 - Quiz Scorer</h1>
+    </header>
+
+    <main>
+      <!--Put your code here (it should not be required but if you wish to add anything, you can)-->
+      <div class="quiz-container">
+        <div class="question">
+          <h3>1. What is the capital of France?</h3>
+          <div class="options">
+            <label>
+              <input type="radio" name="q1" value="0" />
+              London
+            </label>
+            <label>
+              <input type="radio" name="q1" value="1" />
+              Paris
+            </label>
+            <label>
+              <input type="radio" name="q1" value="0" />
+              Berlin
+            </label>
+            <label>
+              <input type="radio" name="q1" value="0" />
+              Madrid
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3>2. Which planet is closest to the Sun?</h3>
+          <div class="options">
+            <label>
+              <input type="radio" name="q2" value="0" />
+              Venus
+            </label>
+            <label>
+              <input type="radio" name="q2" value="0" />
+              Earth
+            </label>
+            <label>
+              <input type="radio" name="q2" value="1" />
+              Mercury
+            </label>
+            <label>
+              <input type="radio" name="q2" value="0" />
+              Mars
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3>3. What is 15 + 27?</h3>
+          <div class="options">
+            <label>
+              <input type="radio" name="q3" value="0" />
+              41
+            </label>
+            <label>
+              <input type="radio" name="q3" value="1" />
+              42
+            </label>
+            <label>
+              <input type="radio" name="q3" value="0" />
+              43
+            </label>
+            <label>
+              <input type="radio" name="q3" value="0" />
+              44
+            </label>
+          </div>
+        </div>
+
+        <button id="submit-btn">Submit Quiz</button>
+        <div class="score-display" id="score">Score: 0/3</div>
+        <button id="reset-btn" style="display: none">Try Again</button>
+      </div>
+    </main>
+    <!--Do not modify any code after this line-->
+    <footer id="dynamicFooter"></footer>
+    <script src="js/quiz.js"></script>
+    <script>
+      document.getElementById('dynamicFooter').innerHTML =
+        '&copy; ' +
+        new Date().getFullYear() +
+        ' WorldSkills | All rights reserved.';
+    </script>
+  </body>
+</html>

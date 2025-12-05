@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Access Codes - Photography Management</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Local FontAwesome -->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="fontawesome/css/solid.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="event-access.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-container">
+        <a href="dashboard.html" class="logo-link">
+          <img src="images/logo.svg" alt="Logo" class="logo-image" />
+          <span class="logo-text">Photography Management</span>
+        </a>
+        <div class="header-user">
+          <span class="welcome-text">Welcome, Admin</span>
+          <button class="btn-logout">
+            <i class="fa fa-sign-out-alt"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="dashboard-layout">
+        <nav class="navigation">
+          <ul class="links">
+            <li>
+              <a href="dashboard.html">
+                <i class="fa fa-home"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="events.html">
+                <i class="fa fa-calendar"></i>
+                <span>Events</span>
+              </a>
+            </li>
+            <li>
+              <a href="pictures.html">
+                <i class="fa fa-images"></i>
+                <span>Pictures</span>
+              </a>
+            </li>
+            <li>
+              <a href="orders.html">
+                <i class="fa fa-shopping-cart"></i>
+                <span>Orders</span>
+              </a>
+            </li>
+            <li>
+              <a href="settings.html">
+                <i class="fa fa-cog"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="content">
+          <div class="back-link">
+            <a href="events.html">
+              <i class="fa fa-arrow-left"></i>
+              Back to Events
+            </a>
+          </div>
+
+          <div class="page-header">
+            <h2>Event Access Codes</h2>
+            <button class="btn-primary">
+              <i class="fa fa-plus"></i>
+              Generate New Code
+            </button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="themed-table">
+              <thead>
+                <tr>
+                  <th>Access Code</th>
+                  <th>Event</th>
+                  <th>Created at</th>
+                  <th class="hide-mobile">Last Used at</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="code-display">GRAD2025-ABC123</span>
+                  </td>
+                  <td>Portsmouth Graduation 2025</td>
+                  <td>January 31, 2025</td>
+                  <td class="hide-mobile">June 1, 2025</td>
+                  <td>
+                    <span class="badge badge-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-copy" title="Copy code">
+                        <i class="fa fa-copy"></i>
+                      </button>
+                      <button class="btn-icon btn-edit" title="Edit code">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button class="btn-icon btn-delete" title="Delete code">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="code-display">SPRING-XYZ789</span>
+                  </td>
+                  <td>Spring Flower Show</td>
+                  <td>June 15, 2025</td>
+                  <td class="hide-mobile">August 1, 2025</td>
+                  <td>
+                    <span class="badge badge-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-copy" title="Copy code">
+                        <i class="fa fa-copy"></i>
+                      </button>
+                      <button class="btn-icon btn-edit" title="Edit code">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button class="btn-icon btn-delete" title="Delete code">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="code-display">CORP-2025-DEF456</span>
+                  </td>
+                  <td>Corporate Awards Ceremony</td>
+                  <td>August 20, 2025</td>
+                  <td class="hide-mobile">N/A</td>
+                  <td>
+                    <span class="badge badge-success">Active</span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-copy" title="Copy code">
+                        <i class="fa fa-copy"></i>
+                      </button>
+                      <button class="btn-icon btn-edit" title="Edit code">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button class="btn-icon btn-delete" title="Delete code">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="code-display">WEDDING-GHI999</span>
+                  </td>
+                  <td>Smith Wedding 2024</td>
+                  <td>December 31, 2024</td>
+                  <td class="hide-mobile">November 1, 2025</td>
+                  <td>
+                    <span class="badge badge-error">Inactive</span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-copy" title="Copy code">
+                        <i class="fa fa-copy"></i>
+                      </button>
+                      <button class="btn-icon btn-edit" title="Edit code">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button class="btn-icon btn-delete" title="Delete code">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <span class="code-display">TEST-JKL111</span>
+                  </td>
+                  <td>Test Event</td>
+                  <td>December 31, 2025</td>
+                  <td class="hide-mobile">N/A</td>
+                  <td>
+                    <span class="badge badge-error">Inactive</span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-copy" title="Copy code">
+                        <i class="fa fa-copy"></i>
+                      </button>
+                      <button class="btn-icon btn-edit" title="Edit code">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button class="btn-icon btn-delete" title="Delete code">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-copyright">&copy; 2025 Photography Management</div>
+    </footer>
+  </body>
+</html>

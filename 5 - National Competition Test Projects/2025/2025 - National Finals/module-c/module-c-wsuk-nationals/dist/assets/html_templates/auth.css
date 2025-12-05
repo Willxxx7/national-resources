@@ -1,0 +1,247 @@
+/* Page wrapper */
+.login-page {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* full bleed */
+  background: var(--gray-50);
+}
+
+/* Outer centering */
+.login-outer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Box */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--rounded-sm);
+  border: 1px solid #e5e7eb; /* gray-200 */
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.login-header h2 {
+  font-size: var(--text-4xl); /* text-4xl */
+  text-align: center;
+  font-weight: bold;
+  color: var(--color-primary-light);
+  margin-bottom: 1rem;
+}
+
+.login-header h3 {
+  font-size: var(--text-xl);
+  text-align: center;
+  color: var(--gray-600);
+}
+
+@media (min-width: 640px) {
+  .login-header h3 {
+    font-size: var(--text-2xl); /* sm:text-2xl */
+  }
+}
+
+/* Error */
+.login-error {
+  font-size: var(--text-2xl); /* text-2xl */
+  font-weight: 600;
+  color: #991b1b; /* red-800 */
+  text-align: center;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+  width: 100%;
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 1.125rem; /* text-lg */
+}
+
+.required {
+  color: #991b1b; /* red-800 */
+  font-size: 1.25rem; /* text-xl */
+}
+
+/* Button */
+.login-btn {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+  font-size: 1.25rem; /* text-xl */
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+  border-radius: var(--rounded-sm);
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Footer */
+.login-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.login-footer p {
+  color: var(--gray-600); /* gray-600 */
+}
+
+.register-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-footer p {
+  color: var(--gray-600); /* gray-600 */
+}
+
+.register-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Page wrapper */
+.register-page {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: var(--gray-50); /* gray-50 */
+}
+
+/* Outer centering */
+.register-outer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Box */
+.register-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--rounded-sm);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.register-header h2 {
+  font-size: 2.25rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--color-primary-light);
+  margin-bottom: 1rem;
+}
+
+.register-header h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #4b5563;
+}
+
+/* Error */
+.register-error {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #991b1b;
+  text-align: center;
+}
+
+/* Form */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .register-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .register-btn {
+    grid-column: span 2;
+  }
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.required {
+  color: #991b1b;
+  font-size: 1.25rem;
+}
+
+/* Footer */
+.register-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.register-footer p {
+  color: #4b5563;
+}
+
+.login-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}

@@ -1,0 +1,10 @@
+order_id,customer_email,order_date,order_note
+1,john.doe@mail.com,2025-10-27,Sample order note
+2,john.doe@mail.com,2025-10-07,Another sample order
+3,john.doe@mail.com,2025-11-10,
+4,john.doe@mail.com,2025-11-16,
+5,john.doe@mail.com,2025-08-27,Bulk order
+6,john.doe@mail.com,2025-11-20,
+7,john.doe@mail.com,2025-10-22,
+8,john.doe@mail.com,2025-11-06,
+9,john.doe@mail.com,2025-10-12,

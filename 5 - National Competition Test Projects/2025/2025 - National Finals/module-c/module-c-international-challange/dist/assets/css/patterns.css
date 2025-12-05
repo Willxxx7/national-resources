@@ -1,0 +1,114 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji';
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+:root {
+  --app-width: 1400px;
+
+  /*box shadow*/
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /*border radius*/
+  --rounded-sm: 4px;
+  --rounded-md: 6px;
+  --rounded-xl: 12px;
+  --rounded-3xl: 24px;
+
+  /*font sizes*/
+  --text-sm: 0.875rem;
+  --text-xl: 1.25rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-4xl: 2.25rem;
+  --text-2xl: 1.5rem;
+
+  /*colors */
+  --color-white: #fff;
+  --color-primary: #e05600;
+  --color-primary-light: #d55738;
+  --color-primary-dark: #b14400;
+  --color-dark-1: #0a0f1c;
+  --color-dark-2: #141a2e;
+  --color-dark-3: #1e2749;
+  --gray-300: oklch(87.2% 0.01 258.338);
+  --zinc-300: #d4d4d8;
+  --blue-600: oklch(54.6% 0.245 262.881);
+  --gray-600: oklch(44.6% 0.03 256.802);
+  --gray-800: oklch(27.8% 0.033 256.848);
+  --gray-50: oklch(98.5% 0.002 247.839);
+  --red-500: oklch(63.7% 0.237 25.331);
+  --green-500: oklch(72.3% 0.219 149.579);
+  --orange-500: oklch(70.5% 0.213 47.604);
+
+  /*gaps*/
+  --gap-1: 0.25rem;
+  --gap-2: 0.5rem;
+  --gap-3: 0.75rem;
+  --gap-4: 1rem;
+}
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  box-sizing: border-box;
+  border: 0 solid;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+}
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+select {
+  border-radius: var(--rounded-sm);
+  padding: var(--gap-2);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--zinc-300);
+  font-size: var(--text-base);
+  background-color: transparent;
+}

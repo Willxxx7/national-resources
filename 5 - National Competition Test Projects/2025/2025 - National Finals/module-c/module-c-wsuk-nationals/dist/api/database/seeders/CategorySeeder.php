@@ -1,0 +1,33 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Category;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class CategorySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table('categories')->insert([
+            ['cat_id' => 1, 'cat_name' => 'Graduation'],
+            ['cat_id' => 2, 'cat_name' => 'Festival'],
+            ['cat_id' => 3, 'cat_name' => 'Competition'],
+            ['cat_id' => 4, 'cat_name' => 'Private Session'],
+            ['cat_id' => 5, 'cat_name' => 'Wedding/Engagement'],
+            ['cat_id' => 6, 'cat_name' => 'Birthday'],
+            ['cat_id' => 7, 'cat_name' => 'School Events'],
+            ['cat_id' => 8, 'cat_name' => 'Charity'],
+            ['cat_id' => 9, 'cat_name' => 'Corporate'],
+            ['cat_id' => 10, 'cat_name' => 'Pet Events'],
+            ['cat_id' => 11, 'cat_name' => 'Seasonal'],
+            ['cat_id' => 12, 'cat_name' => 'Photography Walks'],
+            ['cat_id' => 13, 'cat_name' => 'Community']
+        ]);
+    }
+}

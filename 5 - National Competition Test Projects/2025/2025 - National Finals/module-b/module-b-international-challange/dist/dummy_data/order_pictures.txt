@@ -1,0 +1,95 @@
+# ORDER PICTURES (Junction Table)
+# Links orders with pictures and their selected sizes/quantities
+
+This is the junction table that connects:
+- orders (which customer ordered)
+- pictures (which picture was ordered)
+- picture_sizes (what size they selected)
+- pic_qty (how many copies)
+
+STRUCTURE:
+- order_picture_id: Auto-increment primary key
+- order_id: Foreign key to orders table
+- pic_id: Foreign key to pictures table
+- pic_size_id: Foreign key to picture_sizes table
+- pic_qty: Number of copies ordered
+
+==================
+ORDER 1 (Customer: john.doe@mail.com, Date: 2025-10-27)
+==================
+1. Picture E1P1 (pic_id: 1) - Small (£5.00) - Qty: 2 - Total: £10.00
+2. Picture E2P1 (pic_id: 5) - Large (£15.00) - Qty: 2 - Total: £30.00
+Order 1 Total: £40.00
+
+==================
+ORDER 2 (Customer: john.doe@mail.com, Date: 2025-10-07)
+==================
+1. Picture E4P7 (pic_id: 15) - Extra Large (£20.00) - Qty: 5 - Total: £100.00
+2. Picture E2P5 (pic_id: 9) - Extra Large (£20.00) - Qty: 10 - Total: £200.00
+Order 2 Total: £300.00
+
+==================
+ORDER 3 (Customer: john.doe@mail.com, Date: 2025-11-10)
+==================
+1. Picture E4P8 (pic_id: 16) - Large (£15.00) - Qty: 1 - Total: £15.00
+2. Picture E2P1 (pic_id: 5) - Large (£15.00) - Qty: 2 - Total: £30.00
+3. Picture E2P3 (pic_id: 7) - Small (£5.00) - Qty: 10 - Total: £50.00
+Order 3 Total: £95.00
+
+==================
+ORDER 4 (Customer: john.doe@mail.com, Date: 2025-11-16)
+==================
+1. Picture E5P4 (pic_id: 20) - 8x10 (£18.00) - Qty: 10 - Total: £180.00
+Order 4 Total: £180.00
+
+==================
+ORDER 5 (Customer: john.doe@mail.com, Date: 2025-08-27)
+==================
+NOTE: Bulk order
+1. Picture E4P7 (pic_id: 15) - 4x6 (£8.00) - Qty: 5 - Total: £40.00
+2. Picture E4P5 (pic_id: 13) - 5x7 (£12.00) - Qty: 1 - Total: £12.00
+3. Picture E2P3 (pic_id: 7) - Small (£5.00) - Qty: 10 - Total: £50.00
+Order 5 Total: £102.00
+
+==================
+ORDER 6 (Customer: john.doe@mail.com, Date: 2025-11-20)
+==================
+1. Picture E6P3 (pic_id: 24) - Large (£15.00) - Qty: 12 - Total: £180.00
+Order 6 Total: £180.00
+
+==================
+ORDER 7 (Customer: john.doe@mail.com, Date: 2025-10-22)
+==================
+1. Picture E2P4 (pic_id: 8) - Medium (£10.00) - Qty: 3 - Total: £30.00
+Order 7 Total: £30.00
+
+==================
+ORDER 8 (Customer: john.doe@mail.com, Date: 2025-11-06)
+==================
+1. Picture E4P4 (pic_id: 12) - Extra Large (£20.00) - Qty: 6 - Total: £120.00
+Order 8 Total: £120.00
+
+==================
+ORDER 9 (Customer: john.doe@mail.com, Date: 2025-10-12)
+==================
+1. Picture E1P3 (pic_id: 3) - Medium (£10.00) - Qty: 4 - Total: £40.00
+2. Picture E3P2 (pic_id: 10) - 4x6 (£8.00) - Qty: 2 - Total: £16.00
+Order 9 Total: £56.00
+
+==================
+SUMMARY
+==================
+Total Orders: 9
+Total Order Items: 16 (some orders have multiple pictures)
+Most Ordered Picture: E2P3 (pic_id: 7) - ordered in 2 different orders
+Largest Order: Order 2 (£300.00)
+Smallest Order: Order 7 (£30.00)
+
+PRICE SIZE REFERENCE:
+1 = Small (£5.00)
+2 = Medium (£10.00)
+3 = Large (£15.00)
+4 = Extra Large (£20.00)
+5 = 4x6 (£8.00)
+6 = 5x7 (£12.00)
+7 = 8x10 (£18.00)

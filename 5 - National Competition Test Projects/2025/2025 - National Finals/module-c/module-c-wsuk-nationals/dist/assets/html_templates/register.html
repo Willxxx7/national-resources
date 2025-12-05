@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="app.css" />
+    <link rel="icon" href="../images/logo.svg" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div class="app-wrapper">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-inner">
+          <h1 class="logo">
+            <span class="logo-img">
+              <img src="../images/logo.svg" alt="Spark Studios logo" />
+            </span>
+            Spark Studios
+          </h1>
+
+          <nav class="nav">
+            <ul>
+              <li><a href="/" class="nav-link">Events</a></li>
+
+              <!-- show only when logged out -->
+              <li><a href="/login" class="nav-link">Login</a></li>
+
+              <!-- show only when logged in -->
+              <li><a href="/profile" class="nav-link">Profile</a></li>
+              <li class="basket-link">
+                <a href="/basket" class="nav-link">
+                  Basket
+                  <span class="basket-count">0</span>
+                </a>
+              </li>
+              <li><a href="/logout" class="nav-link">Logout</a></li>
+
+              <!-- always visible -->
+              <li><a href="/register" class="nav-link">Register</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="register-page">
+          <div class="register-outer">
+            <div class="register-box">
+              <!-- Header -->
+              <div class="register-header">
+                <h2>Register</h2>
+                <h3>...and order instantly!</h3>
+              </div>
+
+              <!-- Error -->
+              <p class="register-error">Example error message goes here</p>
+
+              <!-- Form -->
+              <form class="register-form">
+                <div class="form-group">
+                  <label for="firstname">
+                    Firstname
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="firstname"
+                    placeholder="Customer Firstname"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="lastname">
+                    Lastname
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="lastname"
+                    placeholder="Customer Lastname"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="address_first">
+                    First address line
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="address_first"
+                    placeholder="First Address Line"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="address_second">Second address line</label>
+                  <input
+                    type="text"
+                    id="address_second"
+                    placeholder="Second Address Line (optional)"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="postcode">
+                    Postcode
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" id="postcode" placeholder="Postcode" />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">
+                    Email
+                    <span class="required">*</span>
+                  </label>
+                  <input type="email" id="email" placeholder="Customer Email" />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">
+                    Phone
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" id="phone" placeholder="Customer Mobile" />
+                </div>
+
+                <div class="form-group">
+                  <label for="password">
+                    Password
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Customer Password"
+                  />
+                </div>
+                <button type="submit" class="button-primary register-btn">
+                  Register
+                </button>
+              </form>
+
+              <!-- Footer -->
+              <div class="register-footer">
+                <p>Already have an account with us?</p>
+                <a href="login.html" class="login-link">Login Now!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <h3 class="footer-heading">Find your Spark!</h3>
+          <div class="footer-bottom">&copy; 2025 Spark Studios</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/logo.svg" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="profile.css" />
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div class="app-wrapper">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-inner">
+          <h1 class="logo">
+            <span class="logo-img">
+              <img src="../images/logo.svg" alt="Spark Studios logo" />
+            </span>
+            Spark Studios
+          </h1>
+
+          <nav class="nav">
+            <ul>
+              <li><a href="/" class="nav-link">Events</a></li>
+
+              <!-- show only when logged out -->
+              <li><a href="/login" class="nav-link">Login</a></li>
+
+              <!-- show only when logged in -->
+              <li><a href="/profile" class="nav-link">Profile</a></li>
+              <li class="basket-link">
+                <a href="/basket" class="nav-link">
+                  Basket
+                  <span class="basket-count">0</span>
+                </a>
+              </li>
+              <li><a href="/logout" class="nav-link">Logout</a></li>
+
+              <!-- always visible -->
+              <li><a href="/register" class="nav-link">Register</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="order-section">
+          <div class="page-header">
+            <h2>Customer Name</h2>
+            <h3>Manage Your Profile</h3>
+          </div>
+          <div class="profile-container">
+            <form method="POST">
+              <div class="form-inner">
+                <div class="form-group">
+                  <label for="firstname">
+                    Firstname
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    id="firstname"
+                    name="firstname"
+                    type="text"
+                    value="John"
+                    title="Firstname"
+                    placeholder="Firstname"
+                    aria-label="Firstname"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="lastname">
+                    Lastname
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    id="lastname"
+                    name="lastname"
+                    type="text"
+                    value="Doe"
+                    title="Lastname"
+                    placeholder="Lastname"
+                    aria-label="Lastname"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="address1">
+                    First address line
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    id="address1"
+                    name="address1"
+                    type="text"
+                    value="123 Street"
+                    title="First address line"
+                    placeholder="First address line"
+                    aria-label="First address line"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="address2">Second address line</label>
+                  <input
+                    id="address2"
+                    name="address2"
+                    type="text"
+                    title="Second address line"
+                    placeholder="Second address line"
+                    aria-label="Second address line"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="postcode">
+                    Postcode
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    id="postcode"
+                    name="postcode"
+                    type="text"
+                    value="AB12CD"
+                    title="Postcode"
+                    placeholder="Postcode"
+                    aria-label="Postcode"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email - view only</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value="john.doe@mail.com"
+                    disabled
+                    title="Email (view only)"
+                    placeholder="Email"
+                    aria-label="Email (view only)"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">
+                    Phone
+                    <span class="required">*</span>
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value="06701234567"
+                    title="Phone"
+                    placeholder="Phone number"
+                    aria-label="Phone number"
+                  />
+                </div>
+              </div>
+              <button type="submit" class="button-primary">
+                Update My Profile
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <h3 class="footer-heading">Find your Spark!</h3>
+          <div class="footer-bottom">&copy; 2025 Spark Studios</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

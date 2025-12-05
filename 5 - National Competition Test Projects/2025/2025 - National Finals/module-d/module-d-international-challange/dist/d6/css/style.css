@@ -1,0 +1,49 @@
+/*CSS*/
+body,
+h1,
+header,
+main,
+footer,
+div {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+header {
+  background-color: #1a1a1a;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  color: white;
+}
+
+main {
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  background-color: #0a0a0a;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+  text-align: center;
+  color: white;
+}
+
+#copyrightYear {
+  font-weight: bold;
+}
+
+/*DO NOT MODIFY ANY CODE ABOVE*/
+/*PUT YOUR CSS CODE FROM THIS POINT ONWARD*/

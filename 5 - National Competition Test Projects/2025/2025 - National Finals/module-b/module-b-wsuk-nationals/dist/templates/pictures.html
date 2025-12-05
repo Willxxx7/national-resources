@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography Management - Pictures</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Local FontAwesome -->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="fontawesome/css/solid.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="pictures.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-container">
+        <div class="header-logo-section">
+          <a href="dashboard.html" class="logo-link">
+            <img src="images/logo.svg" alt="Logo" class="logo-image" />
+            <span class="logo-text">Photography Management</span>
+          </a>
+        </div>
+        <div class="header-user">
+          <span class="welcome-text">Welcome, Admin User</span>
+          <button type="button" class="btn-logout">
+            <i class="fa fa-sign-out-alt"></i>
+            <span class="btn-text">Logout</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="dashboard-layout">
+        <nav class="navigation">
+          <ul class="links">
+            <li>
+              <a href="dashboard.html">
+                <i class="fa fa-tachometer-alt"></i>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="events.html">
+                <i class="fa fa-calendar"></i>
+                Events
+              </a>
+            </li>
+            <li class="active">
+              <a href="pictures.html">
+                <i class="fa fa-image"></i>
+                Pictures
+              </a>
+            </li>
+            <li>
+              <a href="orders.html">
+                <i class="fa fa-shopping-cart"></i>
+                Orders
+              </a>
+            </li>
+            <li>
+              <a href="settings.html">
+                <i class="fa fa-cog"></i>
+                Settings
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="content">
+          <div class="page-header">
+            <h2>Pictures</h2>
+            <button class="btn-primary">
+              <i class="fa fa-upload"></i>
+              Upload Pictures
+            </button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="themed-table">
+              <thead>
+                <tr>
+                  <th>Preview</th>
+                  <th>Event</th>
+                  <th>Event Category</th>
+                  <th>Upload Date</th>
+                  <th>File path</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="picture-preview">
+                      <i class="fa fa-image"></i>
+                    </div>
+                  </td>
+                  <td>Portsmouth Graduation 2025</td>
+                  <td>Graduation</td>
+                  <td>July 1, 2025</td>
+                  <td><a href="#">private-eventIMG_1234.jpg</a></td>
+                  <td>
+                    <span class="status-badge status-active">Active</span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-edit" title="Edit picture">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button
+                        class="btn-icon btn-delete"
+                        title="Delete picture"
+                      >
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="picture-preview">
+                      <i class="fa fa-image"></i>
+                    </div>
+                  </td>
+                  <td>Summer Dog Show</td>
+                  <td>Dog Show</td>
+                  <td>August 15, 2025</td>
+                  <td><a href="#">public-event/IMG_5678.jpg</a></td>
+                  <td>
+                    <span class="status-badge status-active">Active</span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-edit" title="Edit picture">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button
+                        class="btn-icon btn-delete"
+                        title="Delete picture"
+                      >
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="picture-preview">
+                      <i class="fa fa-image"></i>
+                    </div>
+                  </td>
+                  <td>Portsmouth Graduation 2025</td>
+                  <td>Graduation</td>
+                  <td>July 1, 2025</td>
+                  <td><a href="#">private-event/IMG_9012.jpg</a></td>
+                  <td>
+                    <span class="status-badge status-inactive">Inactive</span>
+                  </td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-edit" title="Edit picture">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button
+                        class="btn-icon btn-delete"
+                        title="Delete picture"
+                      >
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-copyright">&copy; 2025 Photography Management</div>
+    </footer>
+  </body>
+</html>

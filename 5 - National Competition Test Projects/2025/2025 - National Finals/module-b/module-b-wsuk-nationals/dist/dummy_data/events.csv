@@ -1,0 +1,31 @@
+event_id,event_name,cat_id,event_type,event_city,event_date,event_time,event_note
+1,Portsmouth Graduation 2025,1,public,Portsmouth,2025-07-01,14:00:00,Open to public. Photos available by student name.
+2,Summer Dog Show,10,public,Chichester,2025-08-10,12:00:00,Open event. Pet owners can search by dog name.
+3,Bournemouth Dance Finals,3,public,Bournemouth,2025-09-03,16:00:00,
+4,Vintage Car Rally,2,public,Brighton,2025-08-05,13:00:00,Free for all. Classics and modern cars.
+5,Community Art Festival,2,public,Portsmouth,2025-07-22,10:00:00,Local artists exhibit works.
+6,Hastings Beach BBQ,13,public,Hastings,2025-07-19,18:00:00,
+7,Public Open Mic Night,13,public,Reading,2025-07-12,20:00:00,Singers and poets welcome.
+8,Science Expo,2,public,Oxford,2025-08-15,11:00:00,
+9,Food Truck Fiesta,2,public,Southampton,2025-07-28,12:00:00,Try 20+ food vendors.
+10,Marathon Finish Line,3,public,London,2025-10-01,14:00:00,Public cheering area and photos.
+11,Photography Walk,12,public,Bath,2025-06-30,09:00:00,
+12,Community Fireworks Night,11,public,Exeter,2025-11-05,19:00:00,Free entry bring blankets.
+13,Portsmouth Food Festival,2,public,Portsmouth,2025-07-18,12:00:00,Open to all. Food stalls and live music.
+14,University Open Day,7,public,Southampton,2025-09-14,10:00:00,For prospective students and families.
+15,Charity Fun Run,8,public,Guildford,2025-08-20,09:30:00,
+16,Smith Family Portraits,4,private,Southampton,2025-06-15,10:30:00,Private booking. Access restricted to family.
+17,Olivia & Marcus Wedding,5,private,Winchester,2025-06-28,15:00:00,
+18,St. Mary's Year 11 Prom,7,private,Guildford,2025-07-05,19:00:00,Private school prom. Code required to access photos.
+19,Jones Family Reunion,4,private,Oxford,2025-07-14,13:30:00,
+20,Corporate Headshots,9,private,London,2025-08-01,09:00:00,Photoshoot for internal use only.
+21,Lucy's 18th Birthday,4,private,Reading,2025-09-10,18:00:00,Private garden party celebration.
+22,Wilson Engagement Party,5,private,Bath,2025-08-12,17:00:00,
+23,Model Portfolio Shoot,4,private,Brighton,2025-07-25,14:00:00,Booked model sessions only.
+24,Harris Baby Shower,4,private,Bristol,2025-06-27,15:00:00,Photos shared only with attendees.
+25,Studio Christmas Session,11,private,Southampton,2025-12-12,11:00:00,
+26,Pet Portraits Day,10,private,Portsmouth,2025-07-03,10:00:00,Private bookings only.
+27,Graduation Photos Retake,1,private,Guildford,2025-07-15,14:00:00,Only for students who missed main event.
+28,Client Branding Session,9,private,Oxford,2025-09-03,09:00:00,
+29,Family Christmas Portraits,11,private,Chichester,2025-12-03,13:00:00,Access via family login only.
+30,Engagement Shoot – Priya & Jay,5,private,Winchester,2025-10-12,15:00:00,

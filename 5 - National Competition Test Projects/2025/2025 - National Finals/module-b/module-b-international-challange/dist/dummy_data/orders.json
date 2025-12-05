@@ -1,0 +1,82 @@
+[
+  {
+    "order_id": 1,
+    "customer_email": "john.doe@mail.com",
+    "order_date": "2025-10-27",
+    "order_note": "Sample order note",
+    "order_pictures": [
+      { "pic_id": 1, "pic_size_id": 1, "pic_qty": 2 },
+      { "pic_id": 5, "pic_size_id": 3, "pic_qty": 2 }
+    ]
+  },
+  {
+    "order_id": 2,
+    "customer_email": "john.doe@mail.com",
+    "order_date": "2025-10-07",
+    "order_note": "Another sample order",
+    "order_pictures": [
+      { "pic_id": 15, "pic_size_id": 4, "pic_qty": 5 },
+      { "pic_id": 9, "pic_size_id": 4, "pic_qty": 10 }
+    ]
+  },
+  {
+    "order_id": 3,
+    "customer_email": "john.doe@mail.com",
+    "order_date": "2025-11-10",
+    "order_note": null,
+    "order_pictures": [
+      { "pic_id": 16, "pic_size_id": 3, "pic_qty": 1 },
+      { "pic_id": 5, "pic_size_id": 3, "pic_qty": 2 },
+      { "pic_id": 7, "pic_size_id": 1, "pic_qty": 10 }
+    ]
+  },
+  {
+    "order_id": 4,
+    "customer_email": "john.doe@mail.com",
+    "order_date": "2025-11-16",
+    "order_note": null,
+    "order_pictures": [{ "pic_id": 20, "pic_size_id": 7, "pic_qty": 10 }]
+  },
+  {
+    "order_id": 5,
+    "customer_email": "john.doe@mail.com",
+    "order_date": "2025-08-27",
+    "order_note": "Bulk order",
+    "order_pictures": [
+      { "pic_id": 15, "pic_size_id": 5, "pic_qty": 5 },
+      { "pic_id": 13, "pic_size_id": 6, "pic_qty": 1 },
+      { "pic_id": 7, "pic_size_id": 1, "pic_qty": 10 }
+    ]
+  },
+  {
+    "order_id": 6,
+    "customer_email": "john.doe@mail.com",
+    "order_date": "2025-11-20",
+    "order_note": null,
+    "order_pictures": [{ "pic_id": 24, "pic_size_id": 3, "pic_qty": 12 }]
+  },
+  {
+    "order_id": 7,
+    "customer_email": "john.doe@mail.com",
+    "order_date": "2025-10-22",
+    "order_note": null,
+    "order_pictures": [{ "pic_id": 8, "pic_size_id": 2, "pic_qty": 3 }]
+  },
+  {
+    "order_id": 8,
+    "customer_email": "john.doe@mail.com",
+    "order_date": "2025-11-06",
+    "order_note": null,
+    "order_pictures": [{ "pic_id": 12, "pic_size_id": 4, "pic_qty": 6 }]
+  },
+  {
+    "order_id": 9,
+    "customer_email": "john.doe@mail.com",
+    "order_date": "2025-10-12",
+    "order_note": null,
+    "order_pictures": [
+      { "pic_id": 3, "pic_size_id": 2, "pic_qty": 4 },
+      { "pic_id": 10, "pic_size_id": 5, "pic_qty": 2 }
+    ]
+  }
+]

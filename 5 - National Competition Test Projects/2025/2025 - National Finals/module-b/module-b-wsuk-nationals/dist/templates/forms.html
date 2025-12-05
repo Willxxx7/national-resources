@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Forms Reference - Photography Management</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Local FontAwesome -->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="fontawesome/css/solid.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="forms.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-container">
+        <a href="dashboard.html" class="logo-link">
+          <img src="images/logo.svg" alt="Logo" class="logo-image" />
+          <span class="logo-text">Photography Management</span>
+        </a>
+        <div class="header-user">
+          <span class="welcome-text">Modal Forms Reference</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="page-header">
+          <h1>Modal Forms Reference</h1>
+          <p>All modal forms used throughout the application</p>
+        </div>
+
+        <div class="demo-buttons">
+          <button class="btn-primary" onclick="openModal('createEventModal')">
+            <i class="fa fa-calendar"></i>
+            Create Event Form
+          </button>
+          <button class="btn-primary" onclick="openModal('editEventModal')">
+            <i class="fa fa-edit"></i>
+            Edit Event Form
+          </button>
+          <button
+            class="btn-primary"
+            onclick="openModal('createCategoryModal')"
+          >
+            <i class="fa fa-tag"></i>
+            Create Category Form
+          </button>
+          <button class="btn-primary" onclick="openModal('createSizeModal')">
+            <i class="fa fa-ruler"></i>
+            Create Picture Size Form
+          </button>
+          <button class="btn-primary" onclick="openModal('createUserModal')">
+            <i class="fa fa-user"></i>
+            Create User Form
+          </button>
+          <button class="btn-primary" onclick="openModal('createAccessModal')">
+            <i class="fa fa-key"></i>
+            Create Access Code Form
+          </button>
+          <button
+            class="btn-primary"
+            onclick="openModal('uploadPicturesModal')"
+          >
+            <i class="fa fa-upload"></i>
+            Upload Pictures Form
+          </button>
+          <button class="btn-primary" onclick="openModal('accessCodeModal')">
+            <i class="fa fa-unlock"></i>
+            Access Code Verification Form
+          </button>
+        </div>
+
+        <!-- Create Event Modal -->
+        <div id="createEventModal" class="modal">
+          <div class="modal-content" style="max-width: 700px">
+            <div class="modal-header">
+              <h3>Create New Event</h3>
+              <button
+                type="button"
+                class="modal-close"
+                onclick="closeModal('createEventModal')"
+                aria-label="Close modal"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+
+            <form class="modal-form">
+              <div class="form-field">
+                <label for="event_name">Event Name</label>
+                <input
+                  type="text"
+                  id="event_name"
+                  name="event_name"
+                  placeholder="Enter event name"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="event_category">Category</label>
+                <select name="cat_id" id="event_category" required>
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    label="Select Category"
+                  ></option>
+                  <option value="1">Graduation</option>
+                  <option value="2">Wedding</option>
+                  <option value="3">Corporate</option>
+                  <option value="4">Sports</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="event_type">Event Type</label>
+                <select id="event_type" name="event_type" required>
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    label="Select Type"
+                  ></option>
+                  <option value="public">Public</option>
+                  <option value="private">Private</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="event_city">City</label>
+                <input
+                  type="text"
+                  id="event_city"
+                  name="event_city"
+                  placeholder="Enter city"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="event_date_time">Date & Time</label>
+                <input
+                  type="datetime-local"
+                  id="event_date_time"
+                  name="event_date_time"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="event_note">Note</label>
+                <textarea
+                  id="event_note"
+                  name="event_note"
+                  rows="2"
+                  placeholder="Optional notes"
+                ></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="event_folder_path">Folder Path</label>
+                <input
+                  type="text"
+                  id="event_folder_path"
+                  name="event_folder_path"
+                  placeholder="Auto-generated if empty"
+                />
+                <small class="form-hint">Leave empty to auto-generate</small>
+              </div>
+
+              <div class="modal-actions">
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="closeModal('createEventModal')"
+                >
+                  <i class="fa fa-times"></i>
+                  Cancel
+                </button>
+                <button type="submit" class="btn-primary">
+                  <i class="fa fa-plus"></i>
+                  Create Event
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Edit Event Modal -->
+        <div id="editEventModal" class="modal">
+          <div class="modal-content" style="max-width: 700px">
+            <div class="modal-header">
+              <h3>Edit Event</h3>
+              <button
+                type="button"
+                class="modal-close"
+                onclick="closeModal('editEventModal')"
+                aria-label="Close modal"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+
+            <form class="modal-form">
+              <div class="form-field">
+                <label for="edit_event_name">Event Name</label>
+                <input
+                  type="text"
+                  id="edit_event_name"
+                  name="event_name"
+                  placeholder="Enter event name"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="edit_event_category">Category</label>
+                <select name="cat_id" id="edit_event_category" required>
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    label="Select Category"
+                  ></option>
+                  <option value="1">Graduation</option>
+                  <option value="2">Wedding</option>
+                  <option value="3">Corporate</option>
+                  <option value="4">Sports</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="edit_event_type">Event Type</label>
+                <select id="edit_event_type" name="event_type" required>
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    label="Select Type"
+                  ></option>
+                  <option value="public">Public</option>
+                  <option value="private">Private</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="edit_event_city">City</label>
+                <input
+                  type="text"
+                  id="edit_event_city"
+                  name="event_city"
+                  placeholder="Enter city"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="edit_event_date_time">Date & Time</label>
+                <input
+                  type="datetime-local"
+                  id="edit_event_date_time"
+                  name="event_date_time"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="edit_event_note">Note</label>
+                <textarea
+                  id="edit_event_note"
+                  name="event_note"
+                  rows="2"
+                  placeholder="Optional notes"
+                ></textarea>
+              </div>
+
+              <div class="modal-actions">
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="closeModal('editEventModal')"
+                >
+                  <i class="fa fa-times"></i>
+                  Cancel
+                </button>
+                <button type="submit" class="btn-primary">
+                  <i class="fa fa-save"></i>
+                  Update Event
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Create Category Modal -->
+        <div id="createCategoryModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Add New Category</h3>
+              <button
+                type="button"
+                class="modal-close"
+                onclick="closeModal('createCategoryModal')"
+                aria-label="Close modal"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+
+            <form class="modal-form">
+              <div class="form-field">
+                <label for="cat_name">Category Name</label>
+                <input
+                  type="text"
+                  name="cat_name"
+                  id="cat_name"
+                  placeholder="e.g. Weddings, Sports, Events"
+                  required
+                />
+              </div>
+
+              <div class="modal-actions">
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="closeModal('createCategoryModal')"
+                >
+                  <i class="fa fa-times"></i>
+                  Cancel
+                </button>
+                <button type="submit" class="btn-primary">
+                  <i class="fa fa-plus"></i>
+                  Create Category
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Create Picture Size Modal -->
+        <div id="createSizeModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Add New Picture Size</h3>
+              <button
+                type="button"
+                class="modal-close"
+                onclick="closeModal('createSizeModal')"
+                aria-label="Close modal"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+
+            <form class="modal-form">
+              <div class="form-field">
+                <label for="pic_size_label">Label</label>
+                <input
+                  type="text"
+                  name="pic_size_label"
+                  id="pic_size_label"
+                  placeholder="e.g. 4x6, 8x10"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="pic_size_width">Width (inches)</label>
+                <input
+                  type="number"
+                  name="pic_size_width"
+                  id="pic_size_width"
+                  placeholder="Width"
+                  min="0.1"
+                  step="0.1"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="pic_size_height">Height (inches)</label>
+                <input
+                  type="number"
+                  name="pic_size_height"
+                  id="pic_size_height"
+                  placeholder="Height"
+                  min="0.1"
+                  step="0.1"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="pic_size_price">Price</label>
+                <div class="price-input-wrapper">
+                  <span class="currency-symbol">£</span>
+                  <input
+                    type="number"
+                    name="pic_size_price"
+                    id="pic_size_price"
+                    value="0.01"
+                    min="0.01"
+                    step="0.01"
+                    placeholder="0.00"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="modal-actions">
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="closeModal('createSizeModal')"
+                >
+                  <i class="fa fa-times"></i>
+                  Cancel
+                </button>
+                <button type="submit" class="btn-primary">
+                  <i class="fa fa-plus"></i>
+                  Create Size
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Create User Modal -->
+        <div id="createUserModal" class="modal">
+          <div class="modal-content" style="max-width: 600px">
+            <div class="modal-header">
+              <h3>Create New User</h3>
+              <button
+                type="button"
+                class="modal-close"
+                onclick="closeModal('createUserModal')"
+                aria-label="Close modal"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+
+            <form class="modal-form">
+              <div class="form-field">
+                <label for="user_name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="user_name"
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="user_email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="user_email"
+                  placeholder="Email Address"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="user_password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="user_password"
+                  placeholder="Password"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+                  title="Password must be at least 8 characters, include 1 uppercase, 1 lowercase, and 1 number."
+                  required
+                />
+                <small class="form-hint">
+                  Password must be at least 8 characters, include 1 uppercase, 1
+                  lowercase, and 1 number
+                </small>
+              </div>
+
+              <div class="form-field">
+                <label for="user_password_confirmation">Confirm Password</label>
+                <input
+                  type="password"
+                  name="password_confirmation"
+                  id="user_password_confirmation"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+
+              <div class="modal-actions">
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="closeModal('createUserModal')"
+                >
+                  <i class="fa fa-times"></i>
+                  Cancel
+                </button>
+                <button type="submit" class="btn-primary">
+                  <i class="fa fa-user-plus"></i>
+                  Create User
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Create Access Code Modal -->
+        <div id="createAccessModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Create Access Code</h3>
+              <button
+                type="button"
+                class="modal-close"
+                onclick="closeModal('createAccessModal')"
+                aria-label="Close modal"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+
+            <form class="modal-form">
+              <div class="form-field">
+                <label for="access_code">Access Code (Optional)</label>
+                <input
+                  type="text"
+                  name="access_code"
+                  id="access_code"
+                  placeholder="Leave empty to auto-generate"
+                />
+
+                <div class="form-instructions">
+                  <small class="form-hint-bold">
+                    Leave empty to auto-generate a random code, or create your
+                    own custom code:
+                  </small>
+                  <ul class="form-hint-list">
+                    <li>Minimum 8 characters, maximum 50</li>
+                    <li>Only letters and numbers (a-z, A-Z, 0-9)</li>
+                    <li>No spaces or special characters</li>
+                    <li><strong>Must be unique across all events</strong></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="modal-actions">
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="closeModal('createAccessModal')"
+                >
+                  <i class="fa fa-times"></i>
+                  Cancel
+                </button>
+                <button type="submit" class="btn-primary">
+                  <i class="fa fa-plus"></i>
+                  Create Access Code
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Upload Pictures Modal -->
+        <div id="uploadPicturesModal" class="modal">
+          <div class="modal-content" style="max-width: 800px">
+            <div class="modal-header">
+              <h3>Upload Pictures</h3>
+              <button
+                type="button"
+                class="modal-close"
+                onclick="closeModal('uploadPicturesModal')"
+                aria-label="Close modal"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+
+            <form class="modal-form" id="uploadPicturesForm">
+              <div class="form-field">
+                <label for="upload_event">Event</label>
+                <select name="event_id" id="upload_event" required>
+                  <option value="" disabled selected>Select Event</option>
+                  <option value="1">Portsmouth Graduation 2025</option>
+                  <option value="2">Summer Dog Show</option>
+                  <option value="3">Bournemouth Dance Finals</option>
+                  <option value="4">Vintage Car Rally</option>
+                </select>
+              </div>
+
+              <!-- Drag and Drop Area -->
+              <div class="form-field">
+                <label>Pictures</label>
+                <div
+                  id="dropZone"
+                  class="drop-zone"
+                  ondragover="handleDragOver(event)"
+                  ondragleave="handleDragLeave(event)"
+                  ondrop="handleDrop(event)"
+                >
+                  <div class="drop-zone-content">
+                    <i class="fa fa-cloud-upload fa-3x"></i>
+                    <h4>Drag & Drop Pictures Here</h4>
+                    <p>or</p>
+                    <label for="fileInput" class="btn-secondary">
+                      <i class="fa fa-folder-open"></i>
+                      Browse Files
+                    </label>
+                    <input
+                      type="file"
+                      id="fileInput"
+                      name="pictures[]"
+                      multiple
+                      accept="image/*"
+                      style="display: none"
+                      onchange="handleFileSelect(event)"
+                    />
+                    <p class="drop-zone-hint">
+                      Supports: JPG, PNG, GIF (Max 10MB per file)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- File Preview Area -->
+              <div
+                id="filePreviewContainer"
+                class="file-preview-container"
+                style="display: none"
+              >
+                <div class="file-preview-header">
+                  <h4>
+                    Selected Files (
+                    <span id="fileCount">0</span>
+                    )
+                  </h4>
+                  <button
+                    type="button"
+                    class="btn-secondary btn-small"
+                    onclick="clearAllFiles()"
+                  >
+                    <i class="fa fa-trash"></i>
+                    Clear All
+                  </button>
+                </div>
+                <div id="filePreview" class="file-preview"></div>
+              </div>
+
+              <div class="form-field">
+                <label for="upload_note">Upload Note (Optional)</label>
+                <textarea
+                  id="upload_note"
+                  name="pic_upload_note"
+                  rows="2"
+                  placeholder="Add a note about this upload"
+                ></textarea>
+              </div>
+
+              <div class="modal-actions">
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="closeModal('uploadPicturesModal')"
+                >
+                  <i class="fa fa-times"></i>
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="btn-primary"
+                  id="uploadSubmitBtn"
+                  disabled
+                >
+                  <i class="fa fa-upload"></i>
+                  Upload Pictures
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Access Code Verification Modal -->
+        <div id="accessCodeModal" class="modal">
+          <div class="modal-content" style="max-width: 450px">
+            <div class="modal-header">
+              <h3>Access Private Event</h3>
+              <button
+                type="button"
+                class="modal-close"
+                onclick="closeModal('accessCodeModal')"
+                aria-label="Close modal"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+
+            <form method="GET" action="#" class="modal-form">
+              <div class="form-field">
+                <label for="verify_access_code">
+                  Access Code
+                  <span style="color: var(--error)">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="verify_access_code"
+                  name="access_code"
+                  placeholder="Enter your access code"
+                  required
+                  style="text-transform: uppercase; letter-spacing: 1px"
+                />
+                <small class="form-hint">
+                  Enter the private event access code provided to you
+                </small>
+              </div>
+
+              <div class="modal-actions">
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  onclick="closeModal('accessCodeModal')"
+                >
+                  <i class="fa fa-times"></i>
+                  Cancel
+                </button>
+                <button type="submit" class="btn-primary">
+                  <i class="fa fa-unlock"></i>
+                  Access Event
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-copyright">&copy; 2025 Photography Management</div>
+    </footer>
+
+    <script>
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'flex';
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+      }
+
+      // Close modal when clicking outside
+      window.addEventListener('click', function (event) {
+        if (event.target.classList.contains('modal')) {
+          event.target.style.display = 'none';
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          const modals = document.querySelectorAll('.modal');
+          modals.forEach((modal) => {
+            if (modal.style.display === 'flex') {
+              modal.style.display = 'none';
+            }
+          });
+        }
+      });
+
+      // File upload functionality
+      let selectedFiles = [];
+
+      function handleDragOver(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.currentTarget.classList.add('drag-over');
+      }
+
+      function handleDragLeave(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.currentTarget.classList.remove('drag-over');
+      }
+
+      function handleDrop(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.currentTarget.classList.remove('drag-over');
+
+        const files = Array.from(event.dataTransfer.files);
+        addFiles(files);
+      }
+
+      function handleFileSelect(event) {
+        const files = Array.from(event.target.files);
+        addFiles(files);
+      }
+
+      function addFiles(files) {
+        // Filter only image files
+        const imageFiles = files.filter((file) =>
+          file.type.startsWith('image/')
+        );
+
+        // Check file size (10MB max)
+        const validFiles = imageFiles.filter((file) => {
+          if (file.size > 10 * 1024 * 1024) {
+            alert(`File "${file.name}" is too large. Maximum size is 10MB.`);
+            return false;
+          }
+          return true;
+        });
+
+        selectedFiles = [...selectedFiles, ...validFiles];
+        displayFiles();
+        updateSubmitButton();
+      }
+
+      function displayFiles() {
+        const previewContainer = document.getElementById(
+          'filePreviewContainer'
+        );
+        const preview = document.getElementById('filePreview');
+        const fileCount = document.getElementById('fileCount');
+
+        if (selectedFiles.length === 0) {
+          previewContainer.style.display = 'none';
+          return;
+        }
+
+        previewContainer.style.display = 'block';
+        fileCount.textContent = selectedFiles.length;
+        preview.innerHTML = '';
+
+        selectedFiles.forEach((file, index) => {
+          const fileItem = document.createElement('div');
+          fileItem.className = 'file-item';
+
+          const img = document.createElement('img');
+          img.src = URL.createObjectURL(file);
+          img.className = 'file-thumbnail';
+          img.alt = file.name;
+          img.onload = () => URL.revokeObjectURL(img.src);
+
+          const fileInfo = document.createElement('div');
+          fileInfo.className = 'file-info';
+
+          const fileName = document.createElement('div');
+          fileName.className = 'file-name';
+          fileName.textContent = file.name;
+
+          const fileSize = document.createElement('div');
+          fileSize.className = 'file-size';
+          fileSize.textContent = formatFileSize(file.size);
+
+          fileInfo.appendChild(fileName);
+          fileInfo.appendChild(fileSize);
+
+          const removeBtn = document.createElement('button');
+          removeBtn.type = 'button';
+          removeBtn.className = 'file-remove';
+          removeBtn.innerHTML = '<i class="fa fa-times"></i>';
+          removeBtn.setAttribute('aria-label', 'Remove file');
+          removeBtn.onclick = () => removeFile(index);
+
+          fileItem.appendChild(img);
+          fileItem.appendChild(fileInfo);
+          fileItem.appendChild(removeBtn);
+
+          preview.appendChild(fileItem);
+        });
+      }
+
+      function removeFile(index) {
+        selectedFiles.splice(index, 1);
+        displayFiles();
+        updateSubmitButton();
+      }
+
+      function clearAllFiles() {
+        selectedFiles = [];
+        document.getElementById('fileInput').value = '';
+        displayFiles();
+        updateSubmitButton();
+      }
+
+      function updateSubmitButton() {
+        const submitBtn = document.getElementById('uploadSubmitBtn');
+        submitBtn.disabled = selectedFiles.length === 0;
+      }
+
+      function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return (
+          Math.round((bytes / Math.pow(k, i)) * 100) / 100 + ' ' + sizes[i]
+        );
+      }
+
+      // Reset form when modal closes
+      const originalCloseModal = closeModal;
+      closeModal = function (modalId) {
+        if (modalId === 'uploadPicturesModal') {
+          clearAllFiles();
+          document.getElementById('uploadPicturesForm').reset();
+        }
+        originalCloseModal(modalId);
+      };
+    </script>
+  </body>
+</html>

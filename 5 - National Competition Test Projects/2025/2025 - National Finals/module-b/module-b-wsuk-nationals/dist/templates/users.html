@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography Management - Users</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Local FontAwesome -->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="fontawesome/css/solid.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="users.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-container">
+        <div class="header-logo-section">
+          <a href="dashboard.html" class="logo-link">
+            <img src="images/logo.svg" alt="Logo" class="logo-image" />
+            <span class="logo-text">Photography Management</span>
+          </a>
+        </div>
+        <div class="header-user">
+          <span class="welcome-text">Welcome, Admin User</span>
+          <button type="button" class="btn-logout">
+            <i class="fa fa-sign-out-alt"></i>
+            <span class="btn-text">Logout</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="dashboard-layout">
+        <nav class="navigation">
+          <ul class="links">
+            <li>
+              <a href="dashboard.html">
+                <i class="fa fa-tachometer-alt"></i>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="events.html">
+                <i class="fa fa-calendar"></i>
+                Events
+              </a>
+            </li>
+            <li>
+              <a href="pictures.html">
+                <i class="fa fa-image"></i>
+                Pictures
+              </a>
+            </li>
+            <li>
+              <a href="orders.html">
+                <i class="fa fa-shopping-cart"></i>
+                Orders
+              </a>
+            </li>
+            <li class="active">
+              <a href="settings.html">
+                <i class="fa fa-cog"></i>
+                Settings
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="content">
+          <div class="back-link">
+            <a href="settings.html">
+              <i class="fa fa-arrow-left"></i>
+              Back to Settings
+            </a>
+          </div>
+
+          <div class="page-header">
+            <h2>Users</h2>
+            <button class="btn-primary">
+              <i class="fa fa-plus"></i>
+              Create User
+            </button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="themed-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th class="hide-mobile">Created</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Admin User</td>
+                  <td>admin@example.com</td>
+                  <td>
+                    <span class="badge badge-primary">Administrator</span>
+                  </td>
+                  <td class="hide-mobile">January 15, 2025</td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-edit" title="Edit user">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button class="btn-icon btn-delete" title="Delete user">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Staff Member</td>
+                  <td>staff@example.com</td>
+                  <td>
+                    <span class="badge badge-info">Staff</span>
+                  </td>
+                  <td class="hide-mobile">March 10, 2025</td>
+                  <td>
+                    <div class="actions">
+                      <button class="btn-icon btn-edit" title="Edit user">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button class="btn-icon btn-delete" title="Delete user">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-copyright">&copy; 2025 Photography Management</div>
+    </footer>
+  </body>
+</html>

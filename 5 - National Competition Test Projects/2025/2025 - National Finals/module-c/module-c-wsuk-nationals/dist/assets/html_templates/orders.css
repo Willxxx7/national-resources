@@ -1,0 +1,113 @@
+.orders-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+  margin-top: var(--gap-4);
+}
+
+@media (min-width: 768px) {
+  .orders-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--gap-4) * 2);
+  }
+}
+
+.order-box {
+  border: 1px solid var(--zinc-300);
+  border-radius: var(--rounded-sm);
+  box-shadow: var(--shadow-lg);
+  transition: box-shadow 300ms;
+  overflow: hidden;
+  padding: var(--gap-4);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap-2) * 3);
+}
+
+.order-box:hover {
+  box-shadow: var(--shadow-2xl);
+  transition: box-shadow 300ms;
+}
+
+.order-box .order-box-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .status-badge-wrapper {
+    justify-self: start;
+
+    .status-badge {
+      padding: var(--gap-1) var(--gap-4);
+      border: 1px solid transparent;
+      border-radius: var(--rounded-3xl);
+      font-size: var(--text-sm);
+    }
+
+    .status-badge:has(.confirmed) {
+      color: var(--orange-500);
+      border-color: var(--orange-500);
+    }
+
+    .status-badge:has(.paid) {
+      color: var(--green-500);
+      border-color: var(--green-500);
+    }
+
+    .status-badge:has(.cancelled) {
+      color: var(--red-500);
+      border-color: var(--red-500);
+    }
+  }
+
+  .order-id-wrapper {
+    justify-self: center;
+
+    span {
+      font-size: var(--text-xl);
+      font-weight: 600;
+    }
+  }
+
+  .order-price-wrapper {
+    justify-self: end;
+
+    span {
+      font-weight: 600;
+      font-size: var(--text-lg);
+    }
+    span.cancelled {
+      text-decoration: line-through;
+      text-decoration-color: var(--color-primary);
+      text-decoration-thickness: 2px;
+      color: var(--gray-600);
+    }
+  }
+}
+
+.order-box .order-box-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+
+  .order-detail-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-1);
+    color: var(--gray-600);
+  }
+
+  .cancel-order-button {
+    align-self: end;
+    background: none;
+    color: var(--red-500);
+    font-size: var(--text-base);
+    cursor: pointer;
+
+    &:hover {
+      color: color-mix(in lch, var(--red-500) 70%, white);
+    }
+  }
+}

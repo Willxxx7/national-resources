@@ -1,0 +1,1026 @@
+openapi: 3.0.3
+info:
+  title: WorldSkills UK Nationals 2025 - Module C API Specification 
+  description: API routes with examples.
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8000/api/v1/
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    StatusCheckResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: API is running :)
+
+    CustomerLoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+
+    CustomerRegisterRequest:
+      type: object
+      required: [customerFirstname, customerLastname, customerEmail, customerPhone, customerAddressFirst, customerPostcode, customerPassword]
+      properties:
+        customerFirstname:
+          type: string
+          maxLength: 75
+          example: Jane
+        customerLastname:
+          type: string
+          example: Davis
+          maxLength: 75
+        customerEmail:
+          type: string
+          format: email
+          example: "jane.davis@mail.com"
+          maxLength: 150
+        customerPhone:
+          type: string
+          example: 0712345678
+          maxLength: 15
+        customerAddressFirst:
+          type: string
+          example: "123 Street"
+          maxLength: 50
+        customerAddressSecond:
+          type: string
+          example: "Flat 5 Example Court"
+          maxLength: 50
+        customerPostcode:
+          type: string
+          example: "AB12 3CD"
+          maxLength: 8
+        customerPassword:
+          type: string
+          example: password123
+          format: password
+          minLength: 4
+          
+    CustomerUpdateRequest:
+      type: object
+      required: [customerFirstname, customerLastname, customerPhone, customerAddressFirst, customerPostcode]
+      properties:
+        customerFirstname:
+          type: string
+          maxLength: 75
+          example: Update
+        customerLastname:
+          type: string
+          example: Davis
+          maxLength: 75
+        customerPhone:
+          type: string
+          example: 0712345678
+          maxLength: 15
+        customerAddressFirst:
+          type: string
+          example: "123 Street"
+          maxLength: 50
+        customerAddressSecond:
+          type: string
+          example: null
+          maxLength: 50
+        customerPostcode:
+          type: string
+          example: "XZY 123"
+          maxLength: 8
+
+    EventResponse:
+      type: object
+      properties:
+        eventId:
+          type: integer
+        eventCategoryId:
+          type: integer
+        eventCategory:
+          type: string
+        eventName:
+          type: string
+        eventCity:
+          type: string
+        eventDate:
+          type: string
+          format: date
+        eventTime:
+          type: string
+          format: time
+        eventNote:
+          type: string
+        eventFolder:
+          type: string
+        
+
+    Order:
+      type: object
+      properties:
+        id:
+          type: integer
+        status:
+          type: string
+        total:
+          type: number
+          format: float
+
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+
+    PictureSize:
+      type: object
+      properties:
+        id:
+          type: integer
+        width:
+          type: integer
+        height:
+          type: integer
+
+tags:
+  - name: Mixed
+    description: Non-categorized endpoints
+  - name: Auth
+    description: Authentication endpoints
+  - name: My
+    description: Profile related endpoints
+  - name: Events
+    description: Events related endpoints
+  - name: Orders
+    description: Orders related endpoints
+
+
+paths:
+  /status:
+    get:
+      summary: API status check
+      tags: [Mixed]
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusCheckResponse'
+        '503':
+          description: Database connection unavailable
+          content:
+            application/json:
+              example:
+                success: false
+                message: No database connection found 
+
+  /login:
+    post:
+      summary: Customer login
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerLoginRequest'
+            example:
+              email: "john.doe@mail.com"
+              password: "password123"
+      responses:
+        '200':
+          description: Successful login with token and customer data
+          content:
+            application/json:
+              example:
+                success: true
+                message: Login Successful
+                token: TeXOudoZLXyQJxjfwxEFDP0jWNBwn4X4LGYU9SPA8544426f
+                customer: {
+                    "customerId": 1,
+                    "customerFirstname": "John",
+                    "customerLastname": "Doe",
+                    "customerEmail": "john.doe@mail.com",
+                    "customerPhone": "07123456689",
+                    "customerAddressFirst": "123 Street",
+                    "customerAddressSecond": null,
+                    "customerPostcode": "AB12CD",
+                    "customerRegisteredDate": "2025-08-29"
+                }
+                  
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example:
+                success: false
+                message: Invalid credentials
+
+  /register:
+    post:
+      summary: Register new customer
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRegisterRequest'
+      responses:
+        '201':
+          description: Customer created
+          content:
+            application/json:
+              example:
+                success: true
+                message: Successful customer registration
+                token: ndFjXuQ6y8OuNVM0IwpOCEyI2EogyFLyVMmeKvYY1c254f2a
+                customer: {
+                  "customerId": 9,
+                  "customerFirstname": "Jane",
+                  "customerLastname": "Davis",
+                  "customerEmail": "jane.davis@mail.com",
+                  "customerPhone": "0712345678",
+                  "customerAddressFirst": "123 Street",
+                  "customerAddressSecond": null,
+                  "customerPostcode": "AB1 23CD",
+                  "customerRegisteredDate": "2025-09-09"
+                }
+        '422':
+          description: Validation failed (missing field/duplicate email)
+          content:
+            application/json:
+              example:
+                success: false
+                message: Validation Failed
+                data: ["The customer email has already been taken"]
+
+  /logout:
+    post:
+      summary: Logout customer
+      tags: [Auth]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful logout
+          content:
+            application/json:
+              example:
+                success: true
+                message: Logout successful
+        '401':
+          description: Invalid or missing auth bearer token
+
+  /my/profile:
+    get:
+      summary: Get current customer profile information
+      tags: [My]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Profile info
+          content:
+            application/json:
+              example:
+                success: true
+                "customer": {
+                  "customerId": 1,
+                  "customerFirstname": "John",
+                  "customerLastname": "Doe",
+                  "customerEmail": "john.doe@mail.com",
+                  "customerPhone": "07123456689",
+                  "customerAddressFirst": "123 Street",
+                  "customerAddressSecond": null,
+                  "customerPostcode": "AB12CD",
+                  "customerRegisteredDate": "2025-09-09"
+                }
+        '401': 
+          description: Invalid or missing auth bearer token
+    put:
+      summary: Update current customer profile - same as register, except email and password
+      tags: [My]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerUpdateRequest'
+      responses:
+        '200':
+          description: Updated customer profile
+          content:
+            application/json:
+              example:
+                "success": true
+                "message": "Customer successfully updated"
+                "customer": {
+                  "customerId": 9,
+                  "customerFirstname": "Update",
+                  "customerLastname": "Davis",
+                  "customerEmail": "jane.davis@mail.com",
+                  "customerPhone": "712345678",
+                  "customerAddressFirst": "123 Street",
+                  "customerAddressSecond": null,
+                  "customerPostcode": "XZY 123",
+                  "customerRegisteredDate": "2025-09-09"
+                }
+        '422':
+          description: Failed validation (missing required field)
+        '401':
+          description: Invalid or missing auth bearer token
+
+
+  /my/events:
+    get:
+      summary: Get private events accessible to current customer
+      tags: [My]
+      parameters:
+        - name: pictures
+          in: query
+          description: If provided, events will have the belonging pictures included
+          schema:
+            type: boolean
+        - name: city
+          in: query
+          description: Filter event by city
+          schema:
+            type: string
+        - name: name
+          in: query
+          description: Filter event by event name
+          schema:
+            type: string
+        - name: date
+          in: query
+          description: Filter event by exact event date
+          schema:
+            type: string
+            format: date
+        - name: from
+          in: query
+          description: Start of date range (inclusive)
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          description: End of date range (exclusive)
+          schema:
+            type: string
+            format: date
+        - name: search
+          in: query
+          description: Events if either city or event name has matches
+          schema:
+            type: string
+        - name: cat
+          description: Filter by category id
+          in: query
+          schema:
+            type: integer
+        - name: sort
+          description: Sort by event date (accepts desc or asc)
+          in: query
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of private events for customer
+          content:
+            application/json:
+              examples:
+                withPictures:
+                  summary: Events with pictures (?pictures)
+                  value:
+                    success: true
+                    events:
+                        - eventId: 1
+                          eventCategoryId: 1
+                          eventCategory: "Graduation"
+                          eventName: "Portsmouth Graduation 2025"
+                          eventCity: "Portsmouth"
+                          eventDate: "2025-07-01"
+                          eventTime: "14:00:00"
+                          eventNote: "Open to public. Photos available by student name."
+                          eventFolder: "public_events/portsmouth_graduation_2025"
+                          pictures:
+                            - pictureId: 1
+                              pictureLocator: "E1P1"
+                              eventId: 1
+                              event: "Portsmouth Graduation 2025"
+                              categoryId: 1
+                              category: "Graduation"
+                              pictureName: "event_1_pic_1.jpg"
+                              pictureUploadDate: "2025-07-02 00:00:00"
+                              pictureUploadNote: "Iste amet atque odit provident."
+                              pictureIsActive: 1
+                              picturePath: "public_events/portsmouth_graduation_2025/event_1_pic_1.jpg"
+
+                withoutPictures:
+                  summary: Events without pictures
+                  value:
+                    success: true
+                    events:
+                        - eventId: 1
+                          eventCategoryId: 1
+                          eventCategory: "Graduation"
+                          eventName: "Portsmouth Graduation 2025"
+                          eventCity: "Portsmouth"
+                          eventDate: "2025-07-01"
+                          eventTime: "14:00:00"
+                          eventNote: "Open to public. Photos available by student name."
+                          eventFolder: "public_events/portsmouth_graduation_2025" 
+        '401':
+          description: Invalid or missing auth bearer token
+
+
+  /my/orders:
+    get:
+      summary: Get orders of current customer
+      tags: [My]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of orders
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  orders:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Order'
+              examples:
+                OrdersListExample:
+                  summary: Example list of orders
+                  value:
+                    success: true
+                    orders:
+                      - orderId: 6
+                        orderDate: "2025-10-12"
+                        orderStatus: "cancelled"
+                        orderNote: "Et enim incidunt culpa vero."
+                        orderPictures:
+                          - picture:
+                              pictureId: 24
+                              pictureLocator: "E5P24"
+                              eventId: 5
+                              event: "Community Art Festival"
+                              categoryId: 2
+                              category: "Festival"
+                              pictureName: "event_5_pic_4.jpg"
+                              pictureUploadDate: "2025-07-23 00:00:00"
+                              pictureUploadNote: null
+                              pictureIsActive: 1
+                              picturePath: "public_events/community_art_festival/event_5_pic_4.jpg"
+                            picSize:
+                              picSizeId: 3
+                              picSizeLabel: "10x8"
+                              picSizeWidth: 10
+                              picSizeHeight: 8
+                              picSizePrice: 3
+                            picQty: 12
+                        orderTotal: "36.00"
+                      - orderId: 4
+                        orderDate: "2025-10-08"
+                        orderStatus: "paid"
+                        orderNote: "Aut consectetur velit error consequatur iure."
+                        orderPictures:
+                          - picture:
+                              pictureId: 20
+                              pictureLocator: "E4P20"
+                              eventId: 4
+                              event: "Vintage Car Rally"
+                              categoryId: 2
+                              category: "Festival"
+                              pictureName: "event_4_pic_7.jpg"
+                              pictureUploadDate: "2025-08-06 00:00:00"
+                              pictureUploadNote: "Nam amet eum officia enim dolorem laboriosam."
+                              pictureIsActive: 1
+                              picturePath: "public_events/vintage_car_rally/event_4_pic_7.jpg"
+                            picSize:
+                              picSizeId: 7
+                              picSizeLabel: "A3"
+                              picSizeWidth: 11.69
+                              picSizeHeight: 16.54
+                              picSizePrice: 6
+                            picQty: 10
+                        orderTotal: "60.00"
+
+
+  /orders:
+    post:
+      summary: Create new order
+      tags: [Orders]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [orderPictures]
+              properties:
+                orderNote:
+                  type: string
+                  maxLength: 300
+                  example: "Please deliver before graduation day."
+                orderPictures:
+                  type: array
+                  items:
+                    type: object
+                    required: [picId, picSizeId, picQty]
+                    properties:
+                      picId:
+                        type: integer
+                        example: 5
+                      picSizeId:
+                        type: integer
+                        example: 2
+                      picQty:
+                        type: integer
+                        minimum: 1
+                        example: 3
+            example:
+              orderNote: "Please deliver before graduation day."
+              orderPictures:
+                - picId: 5
+                  picSizeId: 2
+                  picQty: 3
+                - picId: 7
+                  picSizeId: 1
+                  picQty: 2
+      responses:
+        '201':
+          description: Order created
+          content:
+            application/json:
+              example:
+                success: true
+                message: Order successfully placed
+                order:
+                  orderId: 6
+                  orderDate: "2025-10-12"
+                  orderStatus: "confirmed"
+                  orderNote: "Et enim incidunt culpa vero."
+                  orderPictures:
+                    - picture:
+                        pictureId: 24
+                        pictureLocator: "E5P24"
+                        eventId: 5
+                        event: "Community Art Festival"
+                        categoryId: 2
+                        category: "Festival"
+                        pictureName: "event_5_pic_4.jpg"
+                        pictureUploadDate: "2025-07-23 00:00:00"
+                        pictureUploadNote: null
+                        pictureIsActive: 1
+                        picturePath: "public_events/community_art_festival/event_5_pic_4.jpg"
+                      picSize:
+                        picSizeId: 3
+                        picSizeLabel: "10x8"
+                        picSizeWidth: 10
+                        picSizeHeight: 8
+                        picSizePrice: 3
+                      picQty: 12
+                  orderTotal: "36.00"
+
+
+  /orders/{id}/cancel:
+    patch:
+      summary: Cancel an order
+      tags: [Orders]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: order
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Order cancelled
+        '204':
+          description: Order already cancelled
+        '409':
+          description: Paid order cannot be cancelled
+
+  /orders/{id}:
+    get:
+      summary: Get details of an order
+      tags: [Orders]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Order details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  order:
+                    $ref: '#/components/schemas/Order'
+              examples:
+                OrderDetailsExample:
+                  summary: Example order details
+                  value:
+                    success: true
+                    order:
+                      orderId: 1
+                      orderDate: "2025-09-18"
+                      orderStatus: "confirmed"
+                      orderPictures:
+                        - picture:
+                            pictureId: 1
+                            pictureLocator: "E1P1"
+                            eventId: 1
+                            event: "Portsmouth Graduation 2025"
+                            categoryId: 1
+                            category: "Graduation"
+                            pictureName: "event_1_pic_1.jpg"
+                            pictureUploadDate: "2025-07-02 00:00:00"
+                            pictureUploadNote: "Eaque nisi quia perferendis."
+                            pictureIsActive: 1
+                            picturePath: "public_events/portsmouth_graduation_2025/event_1_pic_1.jpg"
+                          picSize:
+                            picSizeId: 1
+                            picSizeLabel: "6x4"
+                            picSizeWidth: 6
+                            picSizeHeight: 4
+                            picSizePrice: 1.5
+                          picQty: 2
+                        - picture:
+                            pictureId: 5
+                            pictureLocator: "E2P5"
+                            eventId: 2
+                            event: "Summer Dog Show"
+                            categoryId: 10
+                            category: "Pet Events"
+                            pictureName: "event_2_pic_1.jpg"
+                            pictureUploadDate: "2025-08-11 00:00:00"
+                            pictureUploadNote: "Et dolorem nemo voluptas nemo dolorem natus et."
+                            pictureIsActive: 1
+                            picturePath: "public_events/summer_dog_show/event_2_pic_1.jpg"
+                          picSize:
+                            picSizeId: 3
+                            picSizeLabel: "10x8"
+                            picSizeWidth: 10
+                            picSizeHeight: 8
+                            picSizePrice: 3
+                          picQty: 2
+                      orderTotal: "9.00"
+
+
+  /events:
+    get:
+      summary: Get all public events (paginated)
+      tags: [Events]
+      parameters:
+        - name: page
+          in: query
+          description: Page number
+          schema: 
+            type: integer
+        - name: pictures
+          in: query
+          description: If provided, events will have the belonging pictures includwed
+          schema:
+            type: boolean
+        - name: city
+          in: query
+          description: Filter event by city
+          schema:
+            type: string
+        - name: name
+          in: query
+          description: Filter event by event name
+          schema:
+            type: string
+        - name: date
+          in: query
+          description: Filter event by exact event date
+          schema:
+            type: string
+            format: date
+        - name: from
+          in: query
+          description: Start of date range (inclusive)
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          description: End of date range (exclusive)
+          schema:
+            type: string
+            format: date
+        - name: search
+          in: query
+          description: Events if either city or event name has matches
+          schema:
+            type: string
+        - name: cat
+          description: Filter by category id
+          in: query
+          schema:
+            type: integer
+        - name: sort
+          description: Sort by event date (accepts desc or asc)
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of events
+          content:
+            application/json:
+              examples:
+                withPictures:
+                  summary: Events with pictures (?pictures)
+                  value:
+                    success: true
+                    pagination:
+                      currentPage: 1
+                      lastPage: 3
+                      perPage: 6
+                      total: 15
+                      nextPageUrl: "http://localhost:8000/api/v1/events?page=2"
+                      prevPageUrl: null
+                      onFirstPage: true
+                      hasNextPage: true
+                      onLastPage: false
+                    events:
+                      - eventId: 1
+                        eventCategoryId: 1
+                        eventCategory: "Graduation"
+                        eventName: "Portsmouth Graduation 2025"
+                        eventCity: "Portsmouth"
+                        eventDate: "2025-07-01"
+                        eventTime: "14:00:00"
+                        eventNote: "Open to public. Photos available by student name."
+                        eventFolder: "public_events/portsmouth_graduation_2025"
+                        pictures:
+                          - pictureId: 1
+                            pictureLocator: "E1P1"
+                            eventId: 1
+                            event: "Portsmouth Graduation 2025"
+                            categoryId: 1
+                            category: "Graduation"
+                            pictureName: "event_1_pic_1.jpg"
+                            pictureUploadDate: "2025-07-02 00:00:00"
+                            pictureUploadNote: "Iste amet atque odit provident."
+                            pictureIsActive: 1
+                            picturePath: "public_events/portsmouth_graduation_2025/event_1_pic_1.jpg"
+
+                withoutPictures:
+                  summary: Events without pictures
+                  value:
+                    success: true
+                    pagination:
+                      currentPage: 1
+                      lastPage: 3
+                      perPage: 6
+                      total: 15
+                      nextPageUrl: "http://localhost:8000/api/v1/events?page=2"
+                      prevPageUrl: null
+                      onFirstPage: true
+                      hasNextPage: true
+                      onLastPage: false
+                      events:
+                      - eventId: 1
+                        eventCategoryId: 1
+                        eventCategory: "Graduation"
+                        eventName: "Portsmouth Graduation 2025"
+                        eventCity: "Portsmouth"
+                        eventDate: "2025-07-01"
+                        eventTime: "14:00:00"
+                        eventNote: "Open to public. Photos available by student name."
+                        eventFolder: "public_events/portsmouth_graduation_2025"    
+
+  /events/{id}:
+    get:
+      summary: Get event by ID
+      tags: [Events]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: pictures
+          in: query
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Single Event details
+          content:
+            application/json:
+              examples:
+                withPictures:
+                  summary: Event with pictures (?pictures)
+                  value:
+                    event:
+                      eventId: 1
+                      eventCategoryId: 1
+                      eventCategory: "Graduation"
+                      eventName: "Portsmouth Graduation 2025"
+                      eventCity: "Portsmouth"
+                      eventDate: "2025-07-01"
+                      eventTime: "14:00:00"
+                      eventNote: "Open to public. Photos available by student name."
+                      eventFolder: "public_events/portsmouth_graduation_2025"
+                      pictures:
+                        - pictureId: 1
+                          pictureLocator: "E1P1"
+                          eventId: 1
+                          event: "Portsmouth Graduation 2025"
+                          categoryId: 1
+                          category: "Graduation"
+                          pictureName: "event_1_pic_1.jpg"
+                          pictureUploadDate: "2025-07-02 00:00:00"
+                          pictureUploadNote: "Iste amet atque odit provident."
+                          pictureIsActive: 1
+                          picturePath: "public_events/portsmouth_graduation_2025/event_1_pic_1.jpg"
+                withoutPictures:
+                  summary: Event without pictures
+                  value:
+                    "success": true,
+                    "event": 
+                      "eventId": 1,
+                      "eventCategoryId": 1,
+                      "eventCategory": "Graduation"
+                      "eventName": "Portsmouth Graduation 2025"
+                      "eventCity": "Portsmouth"
+                      "eventDate": "2025-07-01"
+                      "eventTime": "14:00:00"
+                      "eventNote": "Open to public. Photos available by student name."
+                      "eventFolder": "public_events/portsmouth_graduation_2025"
+        '404':
+          description: Either id is invalid (non-existent event) or requested event is private
+          content:
+            application/json:
+              example:
+                success: false
+                message: Not found
+
+  /categories:
+    get:
+      summary: Get all categories
+      tags: [Categories]
+      responses:
+        '200':
+          description: List of categories
+          content:
+            application/json:
+              example:
+                success: true
+                categories:
+                    - categoryId: 1
+                      categoryName: Graduation
+                    - categoryId: 2
+                      categoryName: Festival
+  
+  /categories/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      summary: Get a category by id
+      tags: [Categories]
+      responses:
+        '200':
+          description: Single category
+          content:
+            application/json:
+              example: 
+                success: true
+                category:
+                  categoryId: 1
+                  categoryName: Graduation
+        '404':
+          description: Invalid category id
+          content:
+            application/json:
+              example:
+                success: false
+                message: Not found
+
+
+  /picture-sizes:
+    get:
+      summary: Get all picture sizes
+      tags: [PictureSizes]
+      responses:
+        '200':
+          description: List of picture sizes
+          content:
+            application/json:
+              example:
+                success: true
+                pictureSizes:
+                  - picSizeId: 1
+                    picSizeLabel: 6x4
+                    picSizeWidth: 6
+                    picSizeHeight: 4
+                    picSizePrice: 1.5
+                  - picSizeId: 2
+                    picSizeLabel: 7x5
+                    picSizeWidth: 7
+                    picSizeHeight: 5
+                    picSizePrice: 2
+                  - picSizeId: 3
+                    picSizeLabel: 10x8
+                    picSizeWidth: 10
+                    picSizeHeight: 8
+                    picSizePrice: 3
+  /picture-sizes/{id}:
+    get:
+      summary: Get a picture size by id
+      tags: [PictureSizes]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Single picture size
+          content:
+            application/json:
+              example:
+                success: true
+                pictureSize:
+                    picSizeId: 1
+                    picSizeLabel: 6x4
+                    picSizeWidth: 6
+                    picSizeHeight: 4
+                    picSizePrice: 1.5
+        '404':
+          description: Invalid picture size id
+          content:
+            application/json:
+              example:
+                success: false
+                message: Not found
+
+  /db/reset:
+    post:
+      summary: Reset the database to the default state
+      tags: [Mixed]
+      responses:
+        '200':
+          description: Database reset successfully
+          content:
+            application/json:
+              example:
+                success: true
+                message: Database has been reset successfully!
+                timeOfReset: "2025-09-09 09:51:48"
+        '500':
+          description: Database reset failed

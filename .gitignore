@@ -1,9 +1,8 @@
-# Dependencies - should never be committed
+# Dependencies
 **/node_modules/
 **/vendor/
 
 # Laravel specific
-**/.env
 **/.env.backup
 **/.env.production
 **/storage/*.key
@@ -24,7 +23,6 @@
 *~
 
 # Build outputs
-**/dist/
 **/build/
 **/.cache/
 
